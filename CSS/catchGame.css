@@ -1,0 +1,169 @@
+.background{
+    width: 100%;
+    height: 100%;
+    background-color: rgb(205, 205, 247);
+    padding-top: 60px;
+    margin: 0;
+}
+header{
+    height: 70px;
+    text-align: center;
+}
+header > a{
+    font-size: 2rem;
+    font-weight: 600;
+    color: white;
+    margin-right: 90px;
+    text-shadow:
+    -1px -1px 0 gray,
+    -1px -1px 0 gray,
+    -1px -1px 0 gray,
+    -1px -1px 0 gray;
+}
+header > a > img{
+    width: 60px;
+    height: 60px;
+}
+body{margin:0;
+    background-color: rgb(205, 205, 247);}
+.animal-div{
+    width: 600px;
+    height: 200px;
+    display: flex;
+    padding-right: 100px;
+
+}
+.background2{
+    width: 650px;
+    height: 650px;
+    display: flex;
+    padding-right: 100px;
+    margin-left: 30vw;
+    background-color: rgb(192, 192, 226);
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    border: 1px solid rgb(169, 169, 199);
+    margin-top: 20px;
+}
+.animal{
+    width: 200px;
+    height: 200px;
+    margin-left: 110px;
+    margin-top: 30px;
+    position: relative;
+    z-index: 0;
+    -ms-user-select: none; -moz-user-select: -moz-none; -webkit-user-select: none; -khtml-user-select: none; user-select:none;
+}
+.animal > img:nth-of-type(2n){
+    width: 130px;
+    height: 20px;
+    z-index: 1;
+    position: absolute;
+    display: inline;
+    margin-top: 107px;
+}
+.animal > img{
+    width: 120px;
+    height: 120px;
+    position: absolute;
+    display: inline;
+    display: none;
+}
+.under-bar{
+    width: 100vw;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+.under-bar > button{
+    width: 200px;
+    height: 60px;
+    border-radius: 7px;
+    background-color: yellow;
+    font-size: 20px;
+    font-weight: 600;
+}
+.stopButton{
+    width: 200px;
+    height: 60px;
+    border-radius: 7px;
+    background-color: red;
+    font-size: 20px;
+    font-weight: 600;
+}
+.point{
+    width: 160px;
+    padding: 10px 0px;
+    background-color: black;
+    float: right;
+    margin-right: 20px;
+    border-radius: 7px;
+    text-align: center;
+    color: white;
+    border: 1px solid white;
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+    
+    
+}
+.time{
+    width: 160px;
+    background-color: white;
+    float: right;
+    margin-right: 100px;
+    border-radius: 7px;
+    text-align: center;
+    padding: 10px 0px;
+    border: 1px solid black;
+    color: black;
+    font-size: 18px;
+    font-weight: 600;
+}
+a{text-decoration: none;}
+.point > a{
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+}
+.time > a{
+    color: black;
+    font-size: 18px;
+    font-weight: 600;
+}
+.gameover{
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    display: none;
+    align-items: center;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+}
+.gameover-wrapper{
+    display: flex;
+    flex-direction: column;
+    z-index: 30;
+}
+.gameover-wrapper > img{
+    width: 130px;
+    height: 130px;
+    padding: 0 140px;
+    background: black;
+}
+.reStart{
+    
+    text-align: center;
+    padding: 10px 20px;
+    background-color: white;
+    display: block;
+}
+.reStart > a{
+    color: gray;
+    font-weight: 600;
+    z-index: 0;
+}

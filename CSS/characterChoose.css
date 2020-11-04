@@ -1,0 +1,103 @@
+body{
+    margin: 0px;
+    background-image: url(../IMG/backgroundImageMoring.png);
+    font-family: 나눔고딕;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.background{
+    width: 1920px;
+    height: 1080px;
+    background-color: #ffffff;
+    opacity: 0.4;
+    z-index: -1;
+    position: fixed;
+}
+
+.inputBox{
+    display: flex;
+    align-items: center;
+    width: 824px;
+    height: 112px;
+    margin: 158px 0px 98px;
+    background-color: #ffffff;
+    border: 20px solid #FB5757;
+}
+
+.nameInput{
+    border: none;
+    outline: none;
+    font-size: 26px;
+    margin-left: 26px;
+    width: 772px;
+}
+
+.characterCollection{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+.characterBox{
+    width: 350px;
+    height: 478px;
+    margin: 0px 26px;
+    background-color: #ffffff;
+    border: solid 20px #815555;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-direction: column;
+}
+
+.character{
+    opacity: 0.6;
+}
+
+.character:hover{
+    opacity: 1;
+    transition: all 0.3s;
+}
+
+.buttonBox{
+    width: 100%;
+    margin-top: 20px;
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+}
+
+.nextButton{
+    position: absolute;
+    right: 60px;
+}
+
+.startMent{
+    font-size: 20px;
+    color: #FB5757;
+    position: absolute;
+    top: -20px;
+    right: 64px;
+    padding: 40px 40px 40px 16px;
+    margin: 20px 0px;
+    text-decoration: none;
+}
+
+.startMent:hover{
+    color: #ffffff;
+    transition: all 0.2s;
+}
+
+.selectionPointer1, .selectionPointer2, .selectionPointer3, .selectionPointer4{
+    display: none;
+}
+
+.pointerClick{
+    display: block;
+}
+
+.characterClick{
+    opacity: 1;
+}

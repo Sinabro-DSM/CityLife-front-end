@@ -1,0 +1,78 @@
+body{
+    margin: 0px;
+    background-image: url('../IMG/userBackground.png');
+    font-family: 나눔고딕;
+}
+
+section{
+    width: 1018px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.title{
+    font-size: 164px;
+    font-weight: bolder;
+    color: #ffffff;
+    text-shadow: #707070 5px 10px 10px;
+    margin: 170px 0px 114px 0px;
+}
+
+.loginModal{
+    width: 528px;
+    height: 428px;
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.loginTitle{
+    font-size: 34px;
+    font-weight: bold;
+    color: #00F5FF;
+    margin: 72px 0px 0px;
+}
+
+.loginId ,.loginPassword{
+    color: #B9B9B9;
+    padding: 0px 10px 10px 10px;
+    border-bottom: 2px #DDDDDD solid;
+    font-size: 24px;
+    width: 380px;
+    margin: 42px 0px 0px;
+}
+
+input{
+    font-size: 24px;
+    color: #B9B9B9;
+    border: none;
+    outline: none;
+    width: 268px;
+    padding: 0px;
+}
+
+.signupInformation{
+    color: #B9B9B9;
+    font-size: 12px;
+    margin: 8px 0px 0px;
+    text-decoration: none;
+}
+
+a{
+    color: #B9B9B9;
+}
+
+.loginAttempt{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 196px;
+    height: 56px;
+    background-color: #97ECF0;
+    color: #ffffff;
+    font-size: 18px;
+    margin-top: 34px;
+}

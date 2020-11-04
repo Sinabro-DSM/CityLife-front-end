@@ -1,0 +1,198 @@
+body{
+    margin: 0;
+    background-image: url(./../IMG/cityBackgroundMorning.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    overflow: hidden;
+    z-index: 30;
+}
+a{
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.bodyCover{
+    width: 100%;
+    height: 100vh;
+    background-color: rgb(202, 133, 133);
+    position: absolute;
+    opacity: 0.2;
+    z-index: -2;
+}
+.page > a:nth-of-type(1){
+    font-size: 8rem;
+     color: #5776be; 
+    font-weight: 800;
+/*     animation-name: changeColor;
+    animation-duration: 10s;
+    animation-iteration-count: infinite; */
+    text-shadow: 0px 0px 15px rgba(182, 240, 255, 0.7);
+}
+.page{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+/*     z-index: -1; */
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    opacity: 1;
+    transition: 1s;
+}
+.page > button{
+    width: 400px;
+    height: 100px;
+    background-color: #5776be;
+    color: white;
+    outline: none;
+    border: none;
+    margin-top: 30px;
+    font-size: 1.4rem;
+    font-weight: 600;
+/*     animation-name: changeColor2;
+    animation-duration: 10s;
+    animation-iteration-count: infinite; */
+}
+@keyframes changeColor{
+    0%{
+        color: rgb(68, 113, 196);
+    }
+    20%{
+        color: rgb(86, 107, 165);
+    }
+    40%{
+        color: blue;
+    }
+    60%{
+        color: rgb(116, 145, 189);
+    }
+    80%{
+        color: rgb(160, 166, 255);
+    }
+    100%{
+        color: rgb(68, 113, 196);
+    }
+}
+@keyframes changeColor2{
+    0%{
+        background-color: rgb(68, 113, 196);
+    }
+    20%{
+        background-color: rgb(86, 107, 165);
+    }
+    40%{
+        background-color: blue;
+    }
+    60%{
+        background-color: rgb(116, 145, 189);
+    }
+    80%{
+        background-color: rgb(160, 166, 255);
+    }
+    100%{
+        background-color: rgb(68, 113, 196);
+    }
+}
+.page > button:nth-of-type(1){
+    position: absolute;
+    width: 180px;
+    height: 50px;
+    transform: translate(40vw, 40vh);
+    border-radius: 28px;
+    font-size: large;
+}
+.page2{
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    display: none;
+    opacity: 0;
+}
+.randomBox{
+    width: 800px;
+    height: 500px;
+    background-image: url(./../IMG/money.png);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 0px 10px 40px rgba(161, 161, 161, 0.8);
+    border-radius: 10px;
+    overflow: hidden;
+}
+.randomBox > p{
+    color: rgb(0, 0, 0);
+    font-size: 2rem;
+    font-weight: 600;
+}
+.randomBox > p > a{
+    color: red;
+    font-size: 2rem;
+    font-weight: 600;
+}
+.boxCover{
+    width: 800px;
+    height: 500px;
+    position: absolute;
+    background-color: black;
+    opacity: 1;
+    border-radius: 10px;
+}
+.lottoTitle{
+    transform: translate(-40vw, -16vh);
+    font-size: 2rem;
+    font-weight: 800;
+    color: #5776be;
+}
+.page2 > button:nth-of-type(1){
+    position: absolute;
+    width: 180px;
+    height: 50px;
+    transform: translate(40vw, 40vh);
+    border-radius: 28px;
+    font-size: large;
+    background-color: #5776be;
+    color: white;
+    outline: none;
+    border: none;
+    margin-top: 30px;
+    font-weight: 600;
+    display: none;
+}
+.page2 > img{
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    z-index: 30;
+    animation-name: changeTranslate;
+    animation-duration: 5s;
+    transform: translate(19vw, 25vh);
+}
+@keyframes changeTranslate{
+    0%{
+        transform: translate(-12vw, -17vh);
+    }
+    15%{
+        transform: translate(-18vw, -25vh);
+    }
+    30%{
+        transform: translate(-22vw, 30vh);
+    }
+    45%{
+        transform: translate(-5vw, -17vh);
+    }
+    60%{
+        transform: translate(7vw, 30vh);
+    }
+    75%{
+        transform: translate(22vw, -5vh);
+    }
+    100%{
+        transform: translate(19vw, 25vh);
+    }
+}

@@ -1,0 +1,168 @@
+
+
+
+body{
+    margin: 0px;
+    height: 969px;
+    background-color: #A9B8DC;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+header{    
+    width: 536px;
+    height: 180px;
+    border: double 15px #283963;
+    display: flex;
+    flex-direction: column;
+    margin-top: 28px;
+    cursor: pointer;
+}
+.gameTitle{
+    width: 100%;
+    height: 20%;
+    margin: 10px 0px 72px;
+    font-size: 5em;
+    letter-spacing: 1px;
+}
+.titleAssistant{
+    margin: 0px 0px 30px;
+    font-weight: 600;
+}
+
+.allButton{
+    margin: 24px 0px 18px;
+}
+
+.resetButton, .changeRoundButton{
+    outline: none;
+}
+
+.container{
+    border: solid 3px #636363;
+    border-top: none;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    width: 50%;
+    height: 66%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: #ffffff;
+    min-width: 536px;
+}
+.basketTop, .basketBottom{
+    width: 90%;
+    height: 45%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.basketTop{
+    margin-top: 60px;
+}
+.ballBasket{
+    border: solid 3px #636363;
+    border-top: none;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    width: 70px;
+    height: 280px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    z-index: 1;
+}
+.ball{
+    width: 67px;
+    height: 67px;
+    border-radius: 50%;
+    border: solid 1px #636363;
+    cursor: pointer;
+}
+.violet{
+    background-color: rgb(196, 0, 196);
+}
+.pink{
+    background-color:rgb(255, 59, 167);
+}
+.red{
+    background-color: red;
+}
+.orange{
+    background-color: orange;
+}
+.yellow{
+    background-color: yellow;
+}
+.mint{
+    background-color:mediumspringgreen;
+}
+.olive{
+    background-color:#8cb109;
+}
+.green{
+    background-color:rgb(0, 105, 0);
+}
+.skyblue{
+    background-color: rgb(75, 204, 255);
+}
+.blue{
+    background-color:blue;
+}
+.brown{
+    background-color:#7e4b0c;
+}
+.gray{
+    background-color:grey;
+}
+
+.clickBall{
+    box-shadow: 0px 0px 10px 15px #dfdfdf;
+}
+
+#completeModal{
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 3;
+}
+.completeChange{
+    position: relative;
+    padding: 100px;
+    z-index: 99;
+    font-size: 35px;
+    font-weight: bolder;
+    background-color: #c9d4ec;
+    border-radius: 15px;
+    box-shadow: 0px 0px 20px 15px #666666;
+}
+#modalOverlay{    
+    position: fixed;
+    background: rgb(0, 0, 0);
+    width: 100%;
+    opacity: 0.5;
+    height: 100%;
+
+}
+
+.exitButton{
+    background-color: #c9d4ec;
+    border: none;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    outline: none;
+    padding: 0px;
+}
+
+.exitButton img{
+    width: 32px;
+}
