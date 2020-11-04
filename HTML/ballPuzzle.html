@@ -8,6 +8,7 @@
     <title>공 옮기기 게임</title>
 </head>
 <body>
+    <div class="time" id="time"> <span>시간 : 240초</span></div>
     <img src="../IMG/nav.png" alt="nav" class="nav-img">
     <div class="nav-modal" id="nav-modal">
         <div class="empty" id="empty">
@@ -37,9 +38,22 @@
     <div id="completeModal">
         <div id="modalOverlay"></div>
         <div class="completeChange">
-            <button class="exitButton" onclick="exitModal();" type="button"><img src="./../IMG/exit.png" alt="exit"></button>
-            ~성공~
-        </div>
+            <button class="exitButton" onclick="exitModal();" type="button">초기화</button>
+            <span>축하합니다. 공을 다 맞추셨습니다!</span>
+            <div class="playTime"></div>
+    </div>
+    <div class="gameover-modal" id="gameover">
+        <div class="modal-content">
+            <div class="content">
+                <div class="head">
+                    <h1>Game Over</h1>
+                </div>
+                <div id="score" ></div>
+                <div class="under">
+                    <button id="submit">다시하기</button>
+                </div>
+            </div>
+        </div> 
     </div>
     <section class="allButton">
         <button class="resetButton" onclick="resetButtonClick();" type="button"> Reset </button>
@@ -127,6 +141,20 @@
                 </div>
             </div>
     </section>
+    <div class="rank">
+        <div class="highest rank-list">
+            <img src="../IMG/goldmedal.png" alt="">
+            <span>1st Yunseockhun - 50점</span>
+        </div>
+        <div class="second rank-list">
+            <img src="../IMG/silvermedal.png" alt="">
+            <span>2nd adadadad - 40점</span>
+        </div>
+        <div class="third rank-list">
+            <img src="../IMG/bronzemedal.png" alt="">
+            <span>3rd asdasdgrdfsd - 30점</span>
+        </div>
+    </div>
     <script src="../JS/ballPuzzle.js"></script>
     <script src="../JS/globalModal.js"></script>
 </body>
