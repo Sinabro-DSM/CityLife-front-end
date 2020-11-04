@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>City Life</title>
+    <link rel="stylesheet" href="./../CSS/conveniencePage.css">
+</head>
+<body>
+    <section class="convenienceTitle">CITY 24 </section>
+    <div class="money"><img class="won" src="./../IMG/won.png">잔고 : <div class="remainderMoney">2500</div></div>
+    <section class="convenience">
+        <section class="menu">
+            
+            <div class="menubar">
+                <div onmouseover="menumouseover(0)" onmouseout="menumouseout(0)" onclick="menuclick('과자', '1200')" class="foodBox" id="snack">
+                    <img class="food" src="./../IMG/snack.png">
+                    <img src="./../IMG/barcode1.png">
+                    <img id="scanner1" src="./../IMG/scanner.png">
+                    <div id="price1">1200원</div>
+                </div>
+                <div onmouseover="menumouseover(1)" onmouseout="menumouseout(1)" onclick="menuclick('샐러드', '2500')" class="foodBox" id="salad">
+                    <img class="food" src="./../IMG/salad.png">
+                    <img src="./../IMG/barcode2.png">
+                    <img id="scanner2" src="./../IMG/scanner.png">
+                    <div id="price2">2500원</div>
+                </div>
+                <div onmouseover="menumouseover(2)" onmouseout="menumouseout(2)" onclick="menuclick('닭가슴살', '2000')" class="foodBox" id="chickenbreast">
+                    <img class="food" src="./../IMG/chickenbreast.png">
+                    <img src="./../IMG/barcode3.png">
+                    <img id="scanner3" src="./../IMG/scanner.png">
+                    <div id="price3">2000원</div>
+                </div>
+            </div>
+            <div class="menubar">
+                <div onmouseover="menumouseover(3)" onmouseout="menumouseout(3)" onclick="menuclick('라면', '800')" class="foodBox" id="noodles">
+                    <img class="food" src="./../IMG/noodles.png">
+                    <img src="./../IMG/barcode4.png">
+                    <img id="scanner4" src="./../IMG/scanner.png">
+                    <div id="price4">800원</div>
+                </div>
+                <div onmouseover="menumouseover(4)" onmouseout="menumouseout(4)" onclick="menuclick('삼각김밥', '1000')" class="foodBox" id="kimbab">
+                    <img class="food" src="./../IMG/kimbab.png">
+                    <img src="./../IMG/barcode5.png">
+                    <img id="scanner5" src="./../IMG/scanner.png">
+                    <div id="price5">1000원</div>
+                </div>
+                <div onmouseover="menumouseover(5)" onmouseout="menumouseout(5)" onclick="menuclick('콜라', '800')" class="foodBox" id="softdrink">
+                    <img class="food" src="./../IMG/softdrink.png">
+                    <img src="./../IMG/barcode6.png">
+                    <img id="scanner6" src="./../IMG/scanner.png">
+                    <div id="price6">800원</div>
+                </div>
+            </div>
+        </section>
+        <section class="shopping">
+            <img class="basket" src="./../IMG/shoppingbasket.png">
+            <div id="basketAmountDisplay"><span id="basketAmount">1</span></div>
+            <div class="payment">결제하기</div>
+            <a href="./cityLife.html"><button class="outButton">도시로 나가기</button></a>
+            
+        </section>
+    </section>
+    <script src="./../JS/convenience.js"></script>
+</body>
+</html>

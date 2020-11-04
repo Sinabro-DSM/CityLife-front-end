@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/signupPage.css">
+    <title>City Life</title>
+</head>
+<body>
+    <section>
+        <p class="title">CITY LIFE</p>
+        <div class="signupModal">
+            <p class="signupTitle">회원가입</p>
+            <p class="signupId">아이디 : <input type="text" id="signupIdInput" onkeyup="noSpaceForm(this);" onchange="noSpaceForm(this);"></p>
+            <p class="signupPassword">비밀번호 : <input type="text" id="signupPasswordInput" onkeyup="noSpaceForm(this);" onchange="noSpaceForm(this);"></p>
+            <a class="loginInformation" href="./loginPage.html">이미 계정이 있으신가요? 로그인하기</a>
+            <div class="signupAttempt">회원가입하기</div>
+        </div>
+    </section>
+    <script>
+        function noSpaceForm(obj) { // 공백사용못하게
+            let str_space = /\s/;  // 공백체크
+            if(str_space.exec(obj.value)) { //공백 체크
+                alert("공백을 사용할수 없습니다.\n\n공백은 자동적으로 제거 됩니다.");
+                obj.focus();
+                obj.value = obj.value.replace(' ',''); // 공백제거
+                return false;
+            }
+        }
+        </script>
+</body>
+</html>

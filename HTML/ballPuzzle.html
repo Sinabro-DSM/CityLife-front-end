@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/ballPuzzle.css">
+    <link rel="stylesheet" href="../CSS/globalModal.css">
+    <title>공 옮기기 게임</title>
+</head>
+<body>
+    <img src="../IMG/nav.png" alt="nav" class="nav-img">
+    <div class="nav-modal" id="nav-modal">
+        <div class="empty" id="empty">
+        </div>
+        <div class="nav-content">
+                <a href="./mainMenu.html" class="game-list">
+                    <span>Home</span>
+                </a>
+                <a href="./ballPuzzle.html" class="game-list">
+                    <span>ballpuzzle Game</span>
+                </a>
+                <a href="./catchGame.html" class="game-list">
+                    <span>Catch Game</span>
+                </a>
+                <a href="./lastGame.html" class="game-list">
+                    <span>lastletter</span>
+                </a>
+        </div>
+    </div>
+    <header>
+        
+        <div>
+            <h1 class="gameTitle">Ball Puzzle</h1>
+            <p class="titleAssistant">Moving the ball!!</p>
+        </div>
+    </header>
+    <div id="completeModal">
+        <div id="modalOverlay"></div>
+        <div class="completeChange">
+            <button class="exitButton" onclick="exitModal();" type="button"><img src="./../IMG/exit.png" alt="exit"></button>
+            ~성공~
+        </div>
+    </div>
+    <section class="allButton">
+        <button class="resetButton" onclick="resetButtonClick();" type="button"> Reset </button>
+        <button class="changeRoundButton" onclick="changeRoundButtonClick();" type="button">Change Round</button>
+    </section>
+    <section class="container">
+            <div class="basketTop">
+                <div id="oneBottle" class="ballBasket">
+                    <div class="ball brown"></div>
+                    <div class="ball green"></div>
+                    <div class="ball orange"></div>
+                    <div class="ball red"></div>
+                </div>
+                <div id="twoBottle" class="ballBasket">
+                    <div class="ball yellow"></div>
+                    <div class="ball violet"></div>
+                    <div class="ball blue"></div>
+                    <div class="ball violet"></div>
+                </div>
+                <div id="threeBottle" class="ballBasket">
+                    <div class="ball gray"></div>
+                    <div class="ball mint"></div>
+                    <div class="ball gray"></div>
+                    <div class="ball skyblue"></div>
+                </div>
+                <div id="fourBottle" class="ballBasket">
+                    <div class="ball skyblue"></div>
+                    <div class="ball gray"></div>
+                    <div class="ball blue"></div>
+                    <div class="ball red"></div>
+                </div>
+                <div id="fiveBottle" class="ballBasket">
+                    <div class="ball violet"></div>
+                    <div class="ball mint"></div>
+                    <div class="ball orange"></div>
+                    <div class="ball orange"></div>
+                </div>
+                <div id="sixBottle" class="ballBasket">
+                    <div class="ball mint"></div>
+                    <div class="ball skyblue"></div>
+                    <div class="ball olive"></div>
+                    <div class="ball red"></div>
+                </div>
+                <div id="sevenBottle"class="ballBasket">
+                    <div class="ball orange"></div>
+                    <div class="ball yellow"></div>
+                    <div class="ball yellow"></div>
+                    <div class="ball red"></div>
+                </div>
+            </div>
+            <div class="basketBottom">
+                <div id="eightBottle" class="ballBasket">
+                    <div class="ball green"></div>
+                    <div class="ball pink"></div>
+                    <div class="ball brown"></div>
+                    <div class="ball gray"></div>
+                </div>
+                <div id="nineBottle" class="ballBasket">
+                    <div class="ball pink"></div>
+                    <div class="ball pink"></div>
+                    <div class="ball skyblue"></div>
+                    <div class="ball violet"></div>
+                </div>
+                <div id="tenBottle" class="ballBasket">
+                    <div class="ball brown"></div>
+                    <div class="ball brown"></div>
+                    <div class="ball blue"></div>
+                    <div class="ball blue"></div>
+                </div>
+                <div id="elevenBottle" class="ballBasket">
+                    <div class="ball yellow"></div>
+                    <div class="ball olive"></div>
+                    <div class="ball olive"></div>
+                    <div class="ball green"></div>
+                </div>
+                <div id="twelveBottle" class="ballBasket">
+                    <div class="ball pink"></div>
+                    <div class="ball green"></div>
+                    <div class="ball olive"></div>
+                    <div class="ball mint"></div>
+                </div>
+                <div id="thirteenBottle" class="ballBasket">
+                </div>
+                <div id="fourteenBottle" class="ballBasket">
+                </div>
+            </div>
+    </section>
+    <script src="../JS/ballPuzzle.js"></script>
+    <script src="../JS/globalModal.js"></script>
+</body>
+</html>
