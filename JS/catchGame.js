@@ -10,6 +10,7 @@ function pictureChange(){
         img[math].style.display = "block";
     },700);
 
+    let score = document.getElementById('score');
     let time = 30;
     let sec = "";
     let j = 0;
@@ -24,9 +25,9 @@ function pictureChange(){
             clearInterval(x);
             gameover.style.display = "flex";
             restart.style.display = "block";
-
+            score.innerHTML = k - 1 + '점';
         }
-    }, 1000);
+    }, 200);
 
 }
 
