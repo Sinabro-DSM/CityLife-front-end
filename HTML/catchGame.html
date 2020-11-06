@@ -11,6 +11,7 @@
 <div class="gameover" id="over">
     <div class="gameover-wrapper">    
         <img src="../IMG/게임오버.png" alt="">
+        <div id="score"></div>
         <div class="reStart" id="re">
             <a href=""onClick='top.location!="javascript:location.reload();"'>초기화</a>
         </div>
@@ -27,16 +28,16 @@
                 <div class="empty" id="empty">
                 </div>
                 <div class="nav-content">
-                        <a href="./mainMenu.html" class="game-list">
+                        <a href="mainMenu.html" class="game-list">
                             <span>Home</span>
                         </a>
-                        <a href="./ballPuzzle.html" class="game-list">
+                        <a href="ballPuzzle.html" class="game-list">
                             <span>ballpuzzle Game</span>
                         </a>
-                        <a href="./catchGame.html" class="game-list">
+                        <a href="catchGame.html" class="game-list">
                             <span>Catch Game</span>
                         </a>
-                        <a href="./lastGame.html" class="game-list">
+                        <a href="lastGame.html" class="game-list">
                             <span>lastletter</span>
                         </a>
                 </div>
@@ -95,8 +96,26 @@
                 <button onclick="pictureChange();buttonChange1();" id="button">START!</button>
             </div>
     </div> 
+    
     <div class="rank">
+        <div class="highest rank-list">
+            <img src="../IMG/goldmedal.png" alt="">
+            <span>1st Yunseockhun - 50점</span>
+        </div>
+        <div class="second rank-list">
+            <img src="../IMG/silvermedal.png" alt="">
+            <span>2nd adadadad - 40점</span>
+        </div>
+        <div class="third rank-list">
+            <img src="../IMG/bronzemedal.png" alt="">
+            <span>3rd asdasdgrdfsd - 30점</span>
+        </div>
+<<<<<<< HEAD
+=======
+    </div>
+    <div id="rank">
         
+>>>>>>> develop
     </div>
     <script src="../JS/catchGame.js"></script>  
     <script src="http://code.jquery.com/jquery-latest.min.js"></script> 

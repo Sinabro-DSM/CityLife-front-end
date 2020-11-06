@@ -9,6 +9,12 @@ header{
     height: 70px;
     text-align: center;
 }
+#score{
+    background-color: #FFF;
+    font-size: 1.4rem;
+    display: flex;
+    justify-content: center;
+}
 header > a{
     font-size: 2rem;
     font-weight: 600;
@@ -38,7 +44,7 @@ body{margin:0;
     height: 650px;
     display: flex;
     padding-right: 100px;
-    margin-left: 30vw;
+    margin-left: 23%;
     background-color: rgb(192, 192, 226);
     display: flex;
     flex-direction: column;
@@ -167,3 +173,34 @@ a{text-decoration: none;}
     font-weight: 600;
     z-index: 0;
 }
+.rank{
+    position: absolute;
+    width: 300px;
+    height: 270px;
+    background-color: #e0e0e0a4;
+    border-radius: 20px;
+    top: 30%;
+<<<<<<< HEAD
+    right: 2%;
+=======
+    right: 3%;
+>>>>>>> develop
+}
+.rank-list{
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    margin-left: 6%;
+}
+.rank img{
+    width: 50px;
+    height: 50px;
+}
+.rank-list span{
+    font-size: 1.2rem;
+    margin-left: 7%;
+<<<<<<< HEAD
+} 
+=======
+}
+>>>>>>> develop

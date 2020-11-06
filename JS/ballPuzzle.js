@@ -13,9 +13,13 @@ for(let i in basketNumber){ // #text요소 취급 X
         }
     }
 }
-
 function exitModal(){
     document.getElementById("completeModal").style.display="none";
+    location.reload();
+<<<<<<< HEAD
+=======
+    
+>>>>>>> develop
 }
 
 function complete(){ // 완성된 경우
@@ -49,7 +53,7 @@ function complete(){ // 완성된 경우
         }
         ballcount=0;
     }
-    if(bottlecount==4){
+    if(bottlecount==1){
         return 1;
     }
     return 0;
@@ -92,6 +96,8 @@ function set(){
                         let check=complete();
                         if(check==1){
                             document.getElementById("completeModal").style.display="flex";
+                            document.getElementById("modalBackground").style.visibility = "visible";
+                            document.getElementById("modalBackground").style.zIndex="3";
                         }
                     }else{
                         alert("다시 선택하세요.");
@@ -154,3 +160,39 @@ function changeRoundButtonClick(){ // 새로운 배열 통에 4개씩 넣기, �
     }
     set(); // set함수 실행으로 게임 진행
 }
+let failModal = document.getElementById('gameover');
+<<<<<<< HEAD
+let resetBtn = document.getElementById('resetBtn');
+
+resetBtn.addEventListener('click', function() {
+    location.reload();
+})
+=======
+>>>>>>> develop
+function Modal() {
+    failModal.style.display="block";
+}
+
+let time = 240 + '초';
+let sec= "";
+let j = 0;
+let x = setInterval(function() {
+   sec = 240 -j;
+   document.getElementById("time").innerHTML = "시간 : " + sec + "초";
+   j++; 
+   if(j == 241){
+   clearInterval(x);
+   Modal();
+   console.log('a');    
+}
+
+},1000);
+<<<<<<< HEAD
+let playTime = document.getElementById("playTime");
+playTime.innerHTML = j;
+=======
+>>>>>>> develop
+
+
+
+

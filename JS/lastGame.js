@@ -10,18 +10,30 @@ let size = Math.floor(Math.random() * startSize);
 let randomWord =  startWord[size];
 let randomSize = randomWord.length - 1;
 let start = document.getElementById('start-word');
+let score = document.getElementById('score');
+let rank = document.getElementById('rank');
+let ranking = [];
 
 start.innerHTML = randomWord;
 btn.addEventListener('click', function(e) {
    e.preventDefault();
    // if (word.textContent[word.textContent.length - 1] == input.value[0]) {
       if (start.textContent[start.textContent.length - 1] == input.value[0]) {
-         
-      for(i in array){
-         console.log(i);
+<<<<<<< HEAD
+         for(i in array){
+         if(array[i]==input.value)
+         {
+=======
+         score.innerHTML = array.length+1 + '점';
+         rank = array.length + 1;
+         ranking.push(rank);
+         console.log(ranking.length);
+       for(i in array){
          if(array[i]==input.value)
          {
             // Modal();
+            
+>>>>>>> develop
             alert('한번 사용한 단어는 사용하실 수 없습니다.');
             input.value = '';
             input.focus();
@@ -33,9 +45,10 @@ btn.addEventListener('click', function(e) {
       start.textContent = input.value;
       array.push(input.value);
       list.innerHTML+=input.value + " -> ";
-      console.log(array);
       input.value = '';
       input.focus();
+      console.log(array);  
+      score.innerHTML = array.length + '점';
    } 
    else {
       alert('X');
@@ -75,18 +88,24 @@ navImg.addEventListener("click", toggleModal);
 //  closeButton.addEventListener("click", toggleModal);
 closeModal.addEventListener("click", toggleModal);
 
-// let time = 10;
-// let sec= "";
-// let j = 0;
-// let x = setInterval(function() {
-//    sec = 10-j;
-//    document.getElementById("time").innerHTML = "시간 : " + sec + "초";
-//    j++; 
-//    if(j == 11){
-//    clearInterval(x);
-//    Modal();
-// }
+let time = 10;
+let sec= "";
+let j = 0;
+let x = setInterval(function() {
+   sec = 10-j;
+   document.getElementById("time").innerHTML = "시간 : " + sec + "초";
+   j++; 
+   if(j == 11){
+   clearInterval(x);
+   Modal();
+}
+<<<<<<< HEAD
 
-// },1000);
+},1000);
+
+=======
+
+},1000);
+>>>>>>> develop
 
 
