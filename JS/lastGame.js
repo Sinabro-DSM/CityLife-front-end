@@ -53,6 +53,11 @@ let modal = document.getElementById("gameover");
 
 function Modal() {
    modal.style.display="block";
+   // function preventEnter() {
+   //    if(window.event.keycode == 13) {
+   //       window.event.keycode = 0;
+   //    }
+   // }
 }
 function noSpace(obj){
    let str_space = /\s/;
