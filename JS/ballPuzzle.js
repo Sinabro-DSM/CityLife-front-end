@@ -16,10 +16,6 @@ for(let i in basketNumber){ // #text요소 취급 X
 function exitModal(){
     document.getElementById("completeModal").style.display="none";
     location.reload();
-<<<<<<< HEAD
-=======
-    
->>>>>>> develop
 }
 
 function complete(){ // 완성된 경우
@@ -161,14 +157,11 @@ function changeRoundButtonClick(){ // 새로운 배열 통에 4개씩 넣기, �
     set(); // set함수 실행으로 게임 진행
 }
 let failModal = document.getElementById('gameover');
-<<<<<<< HEAD
 let resetBtn = document.getElementById('resetBtn');
 
 resetBtn.addEventListener('click', function() {
     location.reload();
 })
-=======
->>>>>>> develop
 function Modal() {
     failModal.style.display="block";
 }
@@ -187,12 +180,4 @@ let x = setInterval(function() {
 }
 
 },1000);
-<<<<<<< HEAD
 let playTime = document.getElementById("playTime");
-playTime.innerHTML = j;
-=======
->>>>>>> develop
-
-
-
-

@@ -180,11 +180,7 @@ a{text-decoration: none;}
     background-color: #e0e0e0a4;
     border-radius: 20px;
     top: 30%;
-<<<<<<< HEAD
     right: 2%;
-=======
-    right: 3%;
->>>>>>> develop
 }
 .rank-list{
     display: flex;
@@ -199,8 +195,4 @@ a{text-decoration: none;}
 .rank-list span{
     font-size: 1.2rem;
     margin-left: 7%;
-<<<<<<< HEAD
-} 
-=======
 }
->>>>>>> develop

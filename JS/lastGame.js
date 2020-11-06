@@ -19,21 +19,12 @@ btn.addEventListener('click', function(e) {
    e.preventDefault();
    // if (word.textContent[word.textContent.length - 1] == input.value[0]) {
       if (start.textContent[start.textContent.length - 1] == input.value[0]) {
-<<<<<<< HEAD
-         for(i in array){
-         if(array[i]==input.value)
-         {
-=======
-         score.innerHTML = array.length+1 + '점';
-         rank = array.length + 1;
-         ranking.push(rank);
-         console.log(ranking.length);
+         
        for(i in array){
          if(array[i]==input.value)
          {
             // Modal();
             
->>>>>>> develop
             alert('한번 사용한 단어는 사용하실 수 없습니다.');
             input.value = '';
             input.focus();
@@ -103,14 +94,9 @@ let x = setInterval(function() {
    if(j == 11){
    clearInterval(x);
    Modal();
-}
-<<<<<<< HEAD
-
+   }
 },1000);
 
-=======
 
-},1000);
->>>>>>> develop
 
 

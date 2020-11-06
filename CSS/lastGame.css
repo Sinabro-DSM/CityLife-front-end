@@ -1,13 +1,7 @@
 body{
     margin: 0;
-<<<<<<< HEAD
     background-image: url('../IMG/lastBackground.png');
-=======
-    background-image: url('../IMG/background.png');
->>>>>>> develop
-    /* background-repeat: no-repeat; */
     background-size: cover;
-    
 }
 /* .previous-word h1:nth-of-type(1){
     font-size: 5rem;
@@ -243,8 +237,4 @@ li{
 .rank-list span{
     font-size: 1.2rem;
     margin-left: 7%;
-<<<<<<< HEAD
-} 
-=======
 }
->>>>>>> develop
