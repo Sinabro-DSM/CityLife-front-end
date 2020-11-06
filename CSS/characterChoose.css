@@ -1,6 +1,6 @@
 body{
     margin: 0px;
-    background-image: url(../IMG/backgroundImageMoring.png);
+    background-image: url(./../IMG/backgroundImageMoring.png);
     font-family: 나눔고딕;
     display: flex;
     align-items: center;
@@ -45,7 +45,7 @@ body{
     height: 478px;
     margin: 0px 26px;
     background-color: #ffffff;
-    border: solid 20px #815555;
+    border: solid 20px #495A80;
     display: flex;
     justify-content: flex-end;
     align-items: center;
