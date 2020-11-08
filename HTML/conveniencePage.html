@@ -8,13 +8,13 @@
 </head>
 <body>
     <header><section class="convenienceTitle">CITY 24</section></header>
-    <div class="money"><img class="won" src="./../IMG/won.png"><p>잔고 : </p><div class="remainderMoney">2500</div></div>
+    <div class="money"><img class="won" src="./../IMG/won.png"><p>잔고 : </p><div id="remainderMoney">2500</div></div>
     <section class="convenience">
         <section class="menu">
             <div class="menubar">
                 <div onmouseover="menumouseover(0)"
                      onmouseout="menumouseout(0)"
-                     onclick="menuclick('과자', '1200')"
+                     onclick="menuclick('1200', 0)"
                      class="foodBox" id="snack">
                     <img class="foodImg" src="./../IMG/snack.png">
                     <img class="barcode" src="./../IMG/barcode1.png">
@@ -23,7 +23,7 @@
                 </div>
                 <div onmouseover="menumouseover(1)"
                      onmouseout="menumouseout(1)"
-                     onclick="menuclick('샐러드', '2500')"
+                     onclick="menuclick('2500', 1)"
                       class="foodBox" id="salad">
                     <img class="foodImg" src="./../IMG/salad.png">
                     <img class="barcode" src="./../IMG/barcode2.png">
@@ -32,7 +32,7 @@
                 </div>
                 <div onmouseover="menumouseover(2)" 
                      onmouseout="menumouseout(2)" 
-                     onclick="menuclick('닭가슴살', '2000')" 
+                     onclick="menuclick('2000', 2)" 
                      class="foodBox" id="chickenbreast">
                     <img class="foodImg" src="./../IMG/chickenbreast.png">
                     <img class="barcode" src="./../IMG/barcode3.png">
@@ -43,7 +43,7 @@
             <div class="menubar">
                 <div onmouseover="menumouseover(3)"
                      onmouseout="menumouseout(3)"
-                     onclick="menuclick('라면', '800')"
+                     onclick="menuclick('800', 3)"
                      class="foodBox" id="noodles">
                     <img class="foodImg" src="./../IMG/noodles.png">
                     <img class="barcode" src="./../IMG/barcode4.png">
@@ -52,7 +52,7 @@
                 </div>
                 <div onmouseover="menumouseover(4)" 
                      onmouseout="menumouseout(4)"
-                     onclick="menuclick('삼각김밥', '1000')"
+                     onclick="menuclick('1000', 4)"
                      class="foodBox" id="kimbab">
                     <img class="foodImg" src="./../IMG/kimbab.png">
                     <img class="barcode" src="./../IMG/barcode5.png">
@@ -61,7 +61,7 @@
                 </div>
                 <div onmouseover="menumouseover(5)"
                      onmouseout="menumouseout(5)"
-                     onclick="menuclick('콜라', '800')"
+                     onclick="menuclick('800', 5)"
                      class="foodBox" id="coke">
                     <img class="foodImg" src="./../IMG/softdrink.png">
                     <img class="barcode" src="./../IMG/barcode6.png">
@@ -186,13 +186,14 @@
                     <div id="sum">
                         <div class="firstCell">합계</div>
                         <div id="sumAmount" class="secondCell"></div>
-                        <div id="sumPriceAll" class="thirdCell"></div>
+                        <div id="sumPrice" class="thirdCell"></div>
                     </div>
                 </div>
             </section>
             <div id="paymentResult"></div>
         </div>
-    </section>  
+    </section>
+    <button class="main" href="cityLife.html">메인으로<img src="./../IMG/mainButton.png"></button>
     <script src="./../JS/convenience.js"></script>
 </body>
 </html>

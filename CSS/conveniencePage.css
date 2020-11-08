@@ -19,6 +19,7 @@ body, html #roow{
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
 }
 
 header{padding-top: 40px;}
@@ -32,9 +33,10 @@ header{padding-top: 40px;}
     justify-content: center;
     align-items: center;
     margin: 44px 0px 44px 1334px;
+    cursor: pointer;
 }
 
-.remainderMoney{
+#remainderMoney{
     width: 60px;
 }
 
@@ -63,6 +65,7 @@ header{padding-top: 40px;}
 
 .foodBox{
     position: relative;
+    cursor: pointer;
 }
 
 .foodImg{
@@ -103,6 +106,7 @@ header{padding-top: 40px;}
 .basket{
     width: 305px;
     height: 286px;
+    cursor: pointer;
 }
 
 .paymentButton{
@@ -114,6 +118,7 @@ header{padding-top: 40px;}
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
 }
 
 #basketAmountDisplay{
@@ -237,13 +242,11 @@ header{padding-top: 40px;}
     display: flex;
     flex-direction: column;
 }
-
 .paymentListHeader{
     display: flex;
     margin-bottom: 20px;
     font-size: 18px;
 }
-
 .firstCell {
     display: flex;
     justify-content: flex-end;
@@ -261,4 +264,38 @@ header{padding-top: 40px;}
     justify-content: flex-end;
     width: 76px;
     padding: 0px;
+}
+
+.outButton {
+    background-color: teal;
+    color: white;
+    padding: 15px;
+    border: none;
+    border-radius: 99px;
+    cursor: pointer;
+    margin: 10px 0;
+    outline: none;
+}
+
+.main{
+    width: 168px;
+    height: 64px;
+    border: none;
+    outline: none;
+    border-radius: 40px;
+    position: absolute;
+    right: 80px;
+    bottom: 65px;
+    background-color: #495A80;
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: -1;
+}
+
+.main > img{
+    margin-left: 10px;
 }
