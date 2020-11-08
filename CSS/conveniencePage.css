@@ -281,7 +281,7 @@ header{padding-top: 40px;}
     width: 168px;
     height: 64px;
     border: none;
-    outline: none;
+    text-decoration: none;
     border-radius: 40px;
     position: absolute;
     right: 80px;
@@ -293,7 +293,7 @@ header{padding-top: 40px;}
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: -1;
+    cursor: pointer;
 }
 
 .main > img{
