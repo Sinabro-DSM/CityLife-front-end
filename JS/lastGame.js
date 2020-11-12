@@ -13,53 +13,30 @@ let start = document.getElementById('start-word');
 let score = document.getElementById('score');
 let rank = document.getElementById('rank');
 let ranking = [];
-
-import axios from 'axios'
 let lastScore;
 
 //잠수 돈 주기
 const giveMoney = JSON.stringify({"score":"score"});
 
-const config = {
-  method: 'post',
-  url: 'http://13.125.38.255:3000/game/rank/money',
-  headers: { 
-    'access-token': 'token', 
-    'Content-Type': 'application/json'
-  },
-  giveMoney : data
-};
-
-axios(config)
-.then(function (response) {
-  console.log(JSON.stringify(response.data));
+axios({
+   method: 'get',
+   url: 'http://13.125.38.255:3000/game/rank:',
+   headers: { 
+     'access-token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJ1c2VySWQiLCJpYXQiOjE2MDUxODg3ODUsImV4cCI6MTYwNTI3NTE4NX0.PubknmKAuR0WYqCPz9viz3bs-Afl0XlPXeCiJiB1DaI' 
+   }
+ })
+.then((response) => {
+   console.log(response);
+   // const rank = response.data.rank;
+//   console.log(JSON.stringify(response.data));
 })
-.catch(function (error) {
+.catch((error) => {
   console.log(error);
 });
+
 
 //랭킹 띄우기
 const data = '';
-
-var config = {
-  method: 'get',
-  url: 'http://13.125.38.255:3000/game/rank/',
-  headers: { 
-    'access-token': 'token1324'
-  },
-  data : data
-};
-
-axios(config)
-.then(function (response) {
-  console.log(JSON.stringify(response.data));
-})
-.catch(function (error) {
-  console.log(error);
-});
-
-
-
 start.innerHTML = randomWord;
 btn.addEventListener('click', function(e) {
    e.preventDefault();
@@ -99,7 +76,23 @@ let modal = document.getElementById("gameover");
 
 function Modal() {
    modal.style.display="block";
-   axios.post("/game/rank/money" + lastScore, config)
+   axios({
+      method: 'post',
+      url: 'http://13.125.38.255:3000/game/rank/money',
+      headers: { 
+        'access-token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJ1c2VySWQiLCJpYXQiOjE2MDUxODg3ODUsImV4cCI6MTYwNTI3NTE4NX0.PubknmKAuR0WYqCPz9viz3bs-Afl0XlPXeCiJiB1DaI' 
+      },
+      giveMoney :giveMoney
+    })
+   .then((response) => {
+      console.log('tlqkf')
+      console.log(response);
+   //   console.log(JSON.stringify(response.data));
+   })
+   .catch((error) => {
+      console.log(';;')
+     console.log(error);
+   });
 
 }
 function noSpace(obj){
