@@ -1,9 +1,7 @@
 body{
     margin: 0;
-    background-image: url('../IMG/background.png');
-    /* background-repeat: no-repeat; */
+    background-image: url('../IMG/lastBackground.png');
     background-size: cover;
-    
 }
 /* .previous-word h1:nth-of-type(1){
     font-size: 5rem;

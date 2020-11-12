@@ -13,11 +13,9 @@ for(let i in basketNumber){ // #text요소 취급 X
         }
     }
 }
-
 function exitModal(){
     document.getElementById("completeModal").style.display="none";
     location.reload();
-    
 }
 
 function complete(){ // 완성된 경우
@@ -94,6 +92,8 @@ function set(){
                         let check=complete();
                         if(check==1){
                             document.getElementById("completeModal").style.display="flex";
+                            document.getElementById("modalBackground").style.visibility = "visible";
+                            document.getElementById("modalBackground").style.zIndex="3";
                         }
                     }else{
                         alert("다시 선택하세요.");
@@ -157,6 +157,11 @@ function changeRoundButtonClick(){ // 새로운 배열 통에 4개씩 넣기, �
     set(); // set함수 실행으로 게임 진행
 }
 let failModal = document.getElementById('gameover');
+let resetBtn = document.getElementById('resetBtn');
+
+resetBtn.addEventListener('click', function() {
+    location.reload();
+})
 function Modal() {
     failModal.style.display="block";
 }
@@ -177,10 +182,6 @@ let x = setInterval(function() {
 },1000);
 
 
-
-
-
-import axios from 'axios'
 let lastScore;
 
 //잠수 돈 주기
@@ -224,3 +225,4 @@ axios(config)
   console.log(error);
 });
 
+let playTime = document.getElementById("playTime");
