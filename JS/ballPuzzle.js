@@ -179,3 +179,48 @@ let x = setInterval(function() {
 
 
 
+
+import axios from 'axios'
+let lastScore;
+
+//잠수 돈 주기
+const giveMoney = JSON.stringify({"score":"score"});
+
+const config = {
+  method: 'post',
+  url: 'http://13.125.38.255:3000/game/rank/money',
+  headers: { 
+    'access-token': 'token', 
+    'Content-Type': 'application/json'
+  },
+  giveMoney : data
+};
+
+axios(config)
+.then(function (response) {
+  console.log(JSON.stringify(response.data));
+})
+.catch(function (error) {
+  console.log(error);
+});
+
+//랭킹 띄우기
+const data = '';
+
+var config = {
+  method: 'get',
+  url: 'http://13.125.38.255:3000/game/rank/',
+  headers: { 
+    'access-token': 'token1324'
+  },
+  data : data
+};
+
+axios(config)
+.then(function (response) {
+  console.log(JSON.stringify(response.data));
+})
+.catch(function (error) {
+  console.log(error);
+});
+

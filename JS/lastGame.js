@@ -14,15 +14,58 @@ let score = document.getElementById('score');
 let rank = document.getElementById('rank');
 let ranking = [];
 
+import axios from 'axios'
+let lastScore;
+
+//잠수 돈 주기
+const giveMoney = JSON.stringify({"score":"score"});
+
+const config = {
+  method: 'post',
+  url: 'http://13.125.38.255:3000/game/rank/money',
+  headers: { 
+    'access-token': 'token', 
+    'Content-Type': 'application/json'
+  },
+  giveMoney : data
+};
+
+axios(config)
+.then(function (response) {
+  console.log(JSON.stringify(response.data));
+})
+.catch(function (error) {
+  console.log(error);
+});
+
+//랭킹 띄우기
+const data = '';
+
+var config = {
+  method: 'get',
+  url: 'http://13.125.38.255:3000/game/rank/',
+  headers: { 
+    'access-token': 'token1324'
+  },
+  data : data
+};
+
+axios(config)
+.then(function (response) {
+  console.log(JSON.stringify(response.data));
+})
+.catch(function (error) {
+  console.log(error);
+});
+
+
+
 start.innerHTML = randomWord;
 btn.addEventListener('click', function(e) {
    e.preventDefault();
    // if (word.textContent[word.textContent.length - 1] == input.value[0]) {
       if (start.textContent[start.textContent.length - 1] == input.value[0]) {
-         score.innerHTML = array.length+1 + '점';
-         rank = array.length + 1;
-         ranking.push(rank);
-         console.log(ranking.length);
+         
        for(i in array){
          if(array[i]==input.value)
          {
@@ -40,7 +83,11 @@ btn.addEventListener('click', function(e) {
       array.push(input.value);
       list.innerHTML+=input.value + " -> ";
       input.value = '';
+      score.innerHTML = array.length+1;
+      lastScore = array.length + 1;
       input.focus();
+      console.log(array);  
+      score.innerHTML = array.length + '점';
    } 
    else {
       alert('X');
@@ -50,14 +97,10 @@ btn.addEventListener('click', function(e) {
 });
 let modal = document.getElementById("gameover");
 
-
 function Modal() {
    modal.style.display="block";
-   // function preventEnter() {
-   //    if(window.event.keycode == 13) {
-   //       window.event.keycode = 0;
-   //    }
-   // }
+   axios.post("/game/rank/money" + lastScore, config)
+
 }
 function noSpace(obj){
    let str_space = /\s/;
@@ -95,8 +138,9 @@ let x = setInterval(function() {
    if(j == 11){
    clearInterval(x);
    Modal();
-}
-
+   }
 },1000);
+
+
 
 
