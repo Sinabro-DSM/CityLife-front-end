@@ -15,6 +15,10 @@ const price = [
     document.getElementById('price6')
 ]
 
+let remainderMoney = document.getElementById('remainderMoney'); // 잔액 창
+let money = remainderMoney.innerText; // 잔액 받아오기
+let paymentResult = document.getElementById('paymentResult'); // 결제 결과 출력
+
 let foodCountNumber = [0,0,0,0,0,0]; // 음식마다 갯수 세기
 let foodSumPriceNumber = [0,0,0,0,0,0] // 음식 각각의 가격
 
@@ -90,7 +94,22 @@ function cartClick(type){
 
 function paymentButtonClick(type){
     payment.style.display = type;
+    if(type == 'block'){
+        if(money<priceAll){
+            paymentResult.innerText = '잔액이 부족합니다.';
+        }
+        else{
+            paymentResult.innerText = '결제 완료';
+            money=money-priceAll;
+            remainderMoney.innerText = money;
+        }
+    }
+    if(type == 'none'){
+        cartEmptyClick();
+    }
 }
+
+
 
 function menuclick (foodPrice, number){ // 메뉴 클릭시 실행
     

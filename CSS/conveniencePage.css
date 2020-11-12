@@ -215,6 +215,7 @@ header{padding-top: 40px;}
 
 #paymentsnackList, #paymentsaladList , #paymentchickenbreastList , #paymentnoodlesList , #paymentkimbabList , #paymentcokeList{
     display: none;
+    padding-bottom: 0.4rem;
 }
 
 #payment{
@@ -234,8 +235,9 @@ header{padding-top: 40px;}
 }
 
 #sum{
-    margin-top: 12px;
+    padding-top: 12px;
     display: flex;
+    border-top:1px silver solid;
 }
 
 #paymentList{

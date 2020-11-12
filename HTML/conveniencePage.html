@@ -102,98 +102,52 @@
         <div id="shoppingPaymentList">
             <p class="paymentListTitle">CITY 24</p>
             <p>[영수증]</p>
-            <!-- <table id="list">
-                <thead>
-                    <tr class="paymentListHeader"><td class="productTitle">상품명</td><td class="amountTitle">갯수</td><td class="priceTitle">가격</td></tr>
-                </thead>
+            <table id="list">
+                
+                <tr class="paymentListHeader"><td class="firstCell">상품명</td><td class="secondCell">갯수</td><td class="thirdCell">가격</td></tr>
+                
                 <tbody id="paymentList" >
                     <tr id="paymentsnackList" class="paymentListDisplay">
                         <td class="firstCell">과자</td>
-                        <td id="paymentsnackCount"></td>
-                        <td id="snackSumPrice"></td>
+                        <td id="paymentsnackCount" class="secondCell"></td>
+                        <td id="snackSumPrice" class="thirdCell"></td>
                     </tr>
                     <tr id="paymentsaladList" class="paymentListDisplay">
                         <td class="firstCell">샐러드</td>
-                        <td id="paymentsaladCount"></td>
-                        <td id="saladSumPrice"></td>
+                        <td id="paymentsaladCount" class="secondCell"></td>
+                        <td id="saladSumPrice" class="thirdCell"></td>
                     </tr>
                     <tr id="paymentchickenbreastList" class="paymentListDisplay">
                         <td class="firstCell">닭가슴살</td>
-                        <td id="paymentchickenbreastCount"></td>
-                        <td id="chickenbreastSumPrice"></td>
+                        <td id="paymentchickenbreastCount" class="secondCell"></td>
+                        <td id="chickenbreastSumPrice" class="thirdCell"></td>
                     </tr>
-                    <tr id="paymentnoodlesList" class="paymentListDisplay"
-                        ><td class="firstCell">라면</td>
-                        <td id="paymentnoodlesCount"></td>
-                        <td id="noodlesSumPrice"></td>
+                    <tr id="paymentnoodlesList" class="paymentListDisplay">
+                        <td class="firstCell">라면</td>
+                        <td id="paymentnoodlesCount" class="secondCell"></td>
+                        <td id="noodlesSumPrice" class="thirdCell"></td>
                     </tr>
                     <tr id="paymentkimbabList" class="paymentListDisplay">
                         <td class="firstCell">삼각김밥</td>
-                        <td id="paymentkimbabCount"></td>
-                        <td id="kimbabSumPrice"></td>
+                        <td id="paymentkimbabCount" class="secondCell"></td>
+                        <td id="kimbabSumPrice" class="thirdCell"></td>
                     </tr>
                     <tr id="paymentcokeList" class="paymentListDisplay">
                         <td class="firstCell">콜라</td>
-                        <td id="paymentcokeCount"></td>
-                        <td id="cokeSumPrice"></td>
+                        <td id="paymentcokeCount" class="secondCell"></td>
+                        <td id="cokeSumPrice" class="thirdCell"></td>
                     </tr>
                     <tr id="sum">
-                        <td>합계</td>
-                        <td id="sumAmount"></td>
-                        <td id="sumPriceAll"></td>
+                        <td class="firstCell">합계</td>
+                        <td id="sumAmount" class="secondCell"></td>
+                        <td id="sumPrice" class="thirdCell"></td>
                     </tr>
                 </tbody>
             </table>
-            수정 예정
-            -->
-            
-            <section id="list">
-                
-                    <div class="paymentListHeader"><div class="firstCell">상품명</div><div class="secondCell">갯수</div><div class="thirdCell">가격</div></div>
-                
-                <div id="paymentList" >
-                    <div id="paymentsnackList" class="paymentListDisplay">
-                        <div class="firstCell">과자</div>
-                        <div id="paymentsnackCount" class="secondCell"></div>
-                        <div id="snackSumPrice" class="thirdCell"></div>
-                    </div>
-                    <div id="paymentsaladList" class="paymentListDisplay">
-                        <div class="firstCell">샐러드</div>
-                        <div id="paymentsaladCount" class="secondCell"></div>
-                        <div id="saladSumPrice" class="thirdCell"></div>
-                    </div>
-                    <div id="paymentchickenbreastList" class="paymentListDisplay">
-                        <div class="firstCell">닭가슴살</div>
-                        <div id="paymentchickenbreastCount" class="secondCell"></div>
-                        <div id="chickenbreastSumPrice" class="thirdCell"></div>
-                    </div>
-                    <div id="paymentnoodlesList" class="paymentListDisplay">
-                        <div class="firstCell">라면</div>
-                        <div id="paymentnoodlesCount" class="secondCell"></div>
-                        <div id="noodlesSumPrice" class="thirdCell"></div>
-                    </div>
-                    <div id="paymentkimbabList" class="paymentListDisplay">
-                        <div class="firstCell">삼각김밥</div>
-                        <div id="paymentkimbabCount" class="secondCell"></div>
-                        <div id="kimbabSumPrice" class="thirdCell"></div>
-                    </div>
-                    <div id="paymentcokeList" class="paymentListDisplay">
-                        <div class="firstCell">콜라</div>
-                        <div id="paymentcokeCount" class="secondCell"></div>
-                        <div id="cokeSumPrice" class="thirdCell"></div>
-                    </div>
-                    <hr style="border:1px color= silver;" width="100%">
-                    <div id="sum">
-                        <div class="firstCell">합계</div>
-                        <div id="sumAmount" class="secondCell"></div>
-                        <div id="sumPrice" class="thirdCell"></div>
-                    </div>
-                </div>
-            </section>
             <div id="paymentResult"></div>
         </div>
     </section>
-    <a href="./cityLife.html" class="main">메인으로<img src="./../IMG/mainButton.png"></a>
+    <a class="main" href="./cityLife.html">메인으로<img src="./../IMG/mainButton.png"></a>
     <script src="./../JS/convenience.js"></script>
 </body>
 </html>
