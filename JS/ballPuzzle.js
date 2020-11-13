@@ -9,21 +9,22 @@ let playTime = document.getElementById('playTime');
 window.onload=()=>{
     axios({
        method: 'get',
-       url: 'http://13.125.38.255:3000/game/rank/:1',
+       url: 'http://13.125.38.255:3000/game/rank/1',
        headers: { 
-       'access-token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJ1c2VySWQiLCJpYXQiOjE2MDUxODg3ODUsImV4cCI6MTYwNTI3NTE4NX0.PubknmKAuR0WYqCPz9viz3bs-Afl0XlPXeCiJiB1DaI' 
+       'access-token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJ1c2VySWQiLCJpYXQiOjE2MDUyNzU2NjAsImV4cCI6MzYwMDE2MDUyNzU2NjB9.M4il0CtNPjghIydNyZy-ghN89G__8exyVSxQtjOIm6g' 
        }
     })
     .then((response) => {
        console.log(response);
-       const rank = response.data.rank;
+       const rank = response.data;
+       rank.map((i,j)=>{
+           const rankList = document.getElementsByClassName('rank-list')[j];
+           rankList.childNodes[3].innerText = i.userId;
+       })
     })
     .catch((error) => {
     console.log(error);
     });
-    // rank.map((i,j)=>{
-    //    console.log(i);
-    // })
     }
 
 
@@ -140,7 +141,7 @@ function set(){
                                 method: 'post',
                                 url: 'http://13.125.38.255:3000/game/rank/money',
                                 headers: { 
-                                  'access-token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJ1c2VySWQiLCJpYXQiOjE2MDUxODg3ODUsImV4cCI6MTYwNTI3NTE4NX0.PubknmKAuR0WYqCPz9viz3bs-Afl0XlPXeCiJiB1DaI' 
+                                  'access-token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJ1c2VySWQiLCJpYXQiOjE2MDUyNzU2NjAsImV4cCI6MzYwMDE2MDUyNzU2NjB9.M4il0CtNPjghIydNyZy-ghN89G__8exyVSxQtjOIm6g' 
                                 },
                                 data :giveMoney
                               })
@@ -215,7 +216,7 @@ function changeRoundButtonClick(){ // 새로운 배열 통에 4개씩 넣기, �
 let failModal = document.getElementById('gameover');
 let resetBtn = document.getElementById('resetBtn');
 
-const giveMoney = {"score":"score","id":"id"};
+const giveMoney = {"score":j,"id":1};
 
 resetBtn.addEventListener('click', function() {
     location.reload();
@@ -226,7 +227,7 @@ function Modal() {
         method: 'post',
         url: 'http://13.125.38.255:3000/game/rank/money',
         headers: { 
-          'access-token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJ1c2VySWQiLCJpYXQiOjE2MDUxODg3ODUsImV4cCI6MTYwNTI3NTE4NX0.PubknmKAuR0WYqCPz9viz3bs-Afl0XlPXeCiJiB1DaI' 
+          'access-token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJ1c2VySWQiLCJpYXQiOjE2MDUyNzU2NjAsImV4cCI6MzYwMDE2MDUyNzU2NjB9.M4il0CtNPjghIydNyZy-ghN89G__8exyVSxQtjOIm6g' 
         },
         data :giveMoney
       })
