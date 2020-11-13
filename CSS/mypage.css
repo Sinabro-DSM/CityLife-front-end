@@ -82,4 +82,21 @@ section{
     align-items: center;
     justify-content:center;
 }
+.goMain button{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    font-size: 1.5rem;
+    color: white;
+    background-color: #495A80;
+    border-radius: 100px;
+    width: 13%;
+    border: none;
+    padding: 10px 5px;
+    float: right;
+    margin:0px 10px 10px 0px ;
+}
+.goMain img{
+    height: 30px;
+}
 
