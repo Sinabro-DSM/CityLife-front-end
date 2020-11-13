@@ -1,0 +1,83 @@
+body{
+    margin: 0;
+    background-color: #495A80;
+}
+
+header > .light{
+    position: absolute;
+    display: flex;
+    top: -35%;
+    justify-content: space-around;  
+    width: 100%;
+}
+header >.light img{
+    width: 300px;
+}
+.shadowbox{
+    position: absolute;
+    background-color: #FFFF0E;
+    top: 14%;
+    width: 300px;
+    height: 200px;
+    opacity: 0.5;
+    box-shadow: 100px 100px 100px #FFFF0E;
+}
+.shadowbox:nth-of-type(2){
+    left: 33%;
+}
+.shadowbox:nth-of-type(1){
+    left: 0;
+}
+.shadowbox:nth-of-type(3){
+    right: 14%;
+}
+
+.masterpiece{
+    display: flex;
+    justify-content: space-evenly;
+}
+.masterpiece a img{
+    padding-top: 30%;
+}
+.monariza{
+    width: 244px;
+    height: 360px;
+}
+.monariza:hover{
+    cursor: pointer;
+}
+.first-blockline{   
+    top: 50%;
+    left: 0;
+}
+
+.star {
+    width: 380px;
+    height: 244px;
+}
+.star:hover{
+    cursor: pointer;
+}
+.second-blockline{
+    top: 50%;
+    left: 31%;
+}
+
+.sunflower {
+    width: 244px;
+    height: 358px;
+}
+.sunflower:hover{
+    cursor: pointer;
+}
+.third-blockline{
+    top: 50%;
+    right: 0;
+}
+
+.blockline{
+    width: 530px;
+    height: 250px;
+    position: absolute;
+    z-index: 1;
+}
