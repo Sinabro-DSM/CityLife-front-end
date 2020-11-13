@@ -83,4 +83,6 @@ a{
     color: #ffffff;
     font-size: 18px;
     margin-top: 34px;
+    border: none;
+    cursor: pointer;
 }
