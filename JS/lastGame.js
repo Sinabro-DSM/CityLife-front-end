@@ -11,8 +11,35 @@ let randomWord =  startWord[size];
 let randomSize = randomWord.length - 1;
 let start = document.getElementById('start-word');
 let score = document.getElementById('score');
-let rank = document.getElementById('rank');
+let rank = document.getElementsByClassName('rank');
 let ranking = [];
+let lastScore = 0;
+window.onload=()=>{
+   axios({
+      method: 'get',
+      url: 'http://13.125.38.255:3000/game/rank/2',
+      headers: { 
+      'access-token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJ1c2VySWQiLCJpYXQiOjE2MDUyNzU2NjAsImV4cCI6MzYwMDE2MDUyNzU2NjB9.M4il0CtNPjghIydNyZy-ghN89G__8exyVSxQtjOIm6g' 
+      }
+   })
+   .then((response) => {
+      console.log(response);
+      const rank = response.data;
+      console.log(rank);
+      rank.map((i, j)=>{
+         const rankList = document.getElementsByClassName("rank-list")[j];
+         rankList.childNodes[3].innerText=i.userId;
+         console.log(i.userId)
+      });
+   })
+   .catch((error) => {
+      console.log(error);
+   })
+}
+
+
+const giveMoney = {"score":lastScore, "id":2};
+
 
 start.innerHTML = randomWord;
 btn.addEventListener('click', function(e) {
@@ -32,13 +59,18 @@ btn.addEventListener('click', function(e) {
          }
       }      
       alert('O');
-      // word.textContent = input.value;
       start.textContent = input.value;
       array.push(input.value);
       list.innerHTML+=input.value + " -> ";
       input.value = '';
+      score.innerHTML = array.length;
+      lastScore++;
       input.focus();
       console.log(array);  
+      if(score == 0){
+
+         return;
+      }
       score.innerHTML = array.length + '점';
    } 
    else {
@@ -49,14 +81,23 @@ btn.addEventListener('click', function(e) {
 });
 let modal = document.getElementById("gameover");
 
-
 function Modal() {
    modal.style.display="block";
-   // function preventEnter() {
-   //    if(window.event.keycode == 13) {
-   //       window.event.keycode = 0;
-   //    }
-   // }
+   axios({
+      method: 'post',
+      url: 'http://13.125.38.255:3000/game/rank/money',
+      headers: { 
+        'access-token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJ1c2VySWQiLCJpYXQiOjE2MDUyNzU2NjAsImV4cCI6MzYwMDE2MDUyNzU2NjB9.M4il0CtNPjghIydNyZy-ghN89G__8exyVSxQtjOIm6g' 
+      },
+      data :giveMoney
+    })
+   .then((response) => {
+      console.log(response);
+   })
+   .catch((error) => {
+      console.log(error);
+   });
+
 }
 function noSpace(obj){
    let str_space = /\s/;

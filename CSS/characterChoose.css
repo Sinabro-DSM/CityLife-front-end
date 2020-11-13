@@ -1,10 +1,12 @@
 body{
-    margin: 0px;
     background-image: url(./../IMG/backgroundImageMoring.png);
     font-family: 나눔고딕;
     display: flex;
     align-items: center;
     flex-direction: column;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
 }
 
 .background{
@@ -16,22 +18,12 @@ body{
     position: fixed;
 }
 
-.inputBox{
-    display: flex;
-    align-items: center;
-    width: 824px;
-    height: 112px;
-    margin: 158px 0px 98px;
+p{
+    font-size: 44px;
+    font-weight: bold;
     background-color: #ffffff;
-    border: 20px solid #FB5757;
-}
-
-.nameInput{
-    border: none;
-    outline: none;
-    font-size: 26px;
-    margin-left: 26px;
-    width: 772px;
+    padding: 16px;
+    margin: 118px 0px 72px;
 }
 
 .characterCollection{
@@ -54,6 +46,7 @@ body{
 
 .character{
     opacity: 0.6;
+    cursor: pointer;
 }
 
 .character:hover{
