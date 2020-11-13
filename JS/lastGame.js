@@ -13,21 +13,23 @@ let start = document.getElementById('start-word');
 let score = document.getElementById('score');
 let rank = document.getElementsByClassName('rank');
 let ranking = [];
+let lastScore = 0;
 window.onload=()=>{
    axios({
       method: 'get',
-      url: 'http://13.125.38.255:3000/game/rank/1',
+      url: 'http://13.125.38.255:3000/game/rank/2',
       headers: { 
-      'access-token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJ1c2VySWQiLCJpYXQiOjE2MDUxODg3ODUsImV4cCI6MTYwNTI3NTE4NX0.PubknmKAuR0WYqCPz9viz3bs-Afl0XlPXeCiJiB1DaI' 
+      'access-token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJ1c2VySWQiLCJpYXQiOjE2MDUyNzU2NjAsImV4cCI6MzYwMDE2MDUyNzU2NjB9.M4il0CtNPjghIydNyZy-ghN89G__8exyVSxQtjOIm6g' 
       }
    })
    .then((response) => {
       console.log(response);
       const rank = response.data;
-      rank.map((i,j)=>{
-         console.log(i);
-         let a = document.getElementsByClassName("rank-list")[j];
-         a.childNodes[3].innerText=i.userNickname;
+      console.log(rank);
+      rank.map((i, j)=>{
+         const rankList = document.getElementsByClassName("rank-list")[j];
+         rankList.childNodes[3].innerText=i.userId;
+         console.log(i.userId)
       });
    })
    .catch((error) => {
@@ -36,7 +38,7 @@ window.onload=()=>{
 }
 
 
-const giveMoney = {"score":"score", "id":"id"};
+const giveMoney = {"score":lastScore, "id":2};
 
 
 start.innerHTML = randomWord;
@@ -57,15 +59,18 @@ btn.addEventListener('click', function(e) {
          }
       }      
       alert('O');
-      // word.textContent = input.value;
       start.textContent = input.value;
       array.push(input.value);
       list.innerHTML+=input.value + " -> ";
       input.value = '';
-      score.innerHTML = array.length+1;
-      lastScore = array.length + 1;
+      score.innerHTML = array.length;
+      lastScore++;
       input.focus();
       console.log(array);  
+      if(score == 0){
+
+         return;
+      }
       score.innerHTML = array.length + '점';
    } 
    else {
@@ -82,7 +87,7 @@ function Modal() {
       method: 'post',
       url: 'http://13.125.38.255:3000/game/rank/money',
       headers: { 
-        'access-token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJ1c2VySWQiLCJpYXQiOjE2MDUxODg3ODUsImV4cCI6MTYwNTI3NTE4NX0.PubknmKAuR0WYqCPz9viz3bs-Afl0XlPXeCiJiB1DaI' 
+        'access-token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJ1c2VySWQiLCJpYXQiOjE2MDUyNzU2NjAsImV4cCI6MzYwMDE2MDUyNzU2NjB9.M4il0CtNPjghIydNyZy-ghN89G__8exyVSxQtjOIm6g' 
       },
       data :giveMoney
     })
