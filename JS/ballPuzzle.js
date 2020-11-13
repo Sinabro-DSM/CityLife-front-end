@@ -3,6 +3,29 @@ const ballNumber = document.getElementsByClassName("ball");
 let reset;
 let count=0; // 공이 선택된 횟수 
 let checkball=[];
+let rank = document.getElementsByClassName('rank');
+let playTime = document.getElementById('playTime');
+
+window.onload=()=>{
+    axios({
+       method: 'get',
+       url: 'http://13.125.38.255:3000/game/rank/:1',
+       headers: { 
+       'access-token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJ1c2VySWQiLCJpYXQiOjE2MDUxODg3ODUsImV4cCI6MTYwNTI3NTE4NX0.PubknmKAuR0WYqCPz9viz3bs-Afl0XlPXeCiJiB1DaI' 
+       }
+    })
+    .then((response) => {
+       console.log(response);
+       const rank = response.data.rank;
+    })
+    .catch((error) => {
+    console.log(error);
+    });
+    // rank.map((i,j)=>{
+    //    console.log(i);
+    // })
+    }
+
 
 document.getElementById("completeModal").style.display="none"; // 모달창 none
 
@@ -17,6 +40,21 @@ function exitModal(){
     document.getElementById("completeModal").style.display="none";
     location.reload();
 }
+let time = 4 + '분' + 00 + '초';
+let sec= "";
+let j = 0;
+let x = setInterval(function() {
+   sec = 240 -j;
+   document.getElementById("time").innerHTML = "시간 : " + Math.floor(sec/60) + "분" + sec%60 + "초";
+   j++; 
+   if(j == 241){
+    clearInterval(x);
+    Modal();
+    console.log('a'); 
+
+   }
+
+},1000);
 
 function complete(){ // 완성된 경우
     let bottlecount=0;
@@ -50,9 +88,11 @@ function complete(){ // 완성된 경우
         ballcount=0;
     }
     if(bottlecount==1){
+        clearInterval(x);
         return 1;
     }
     return 0;
+
 }
 
 function selectionBall(ball) { // 선택된 공 표시
@@ -94,6 +134,22 @@ function set(){
                             document.getElementById("completeModal").style.display="flex";
                             document.getElementById("modalBackground").style.visibility = "visible";
                             document.getElementById("modalBackground").style.zIndex="3";
+                            playTime.innerHTML = Math.floor(j/60) + "분" + j%60 + "초";
+
+                            axios({
+                                method: 'post',
+                                url: 'http://13.125.38.255:3000/game/rank/money',
+                                headers: { 
+                                  'access-token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJ1c2VySWQiLCJpYXQiOjE2MDUxODg3ODUsImV4cCI6MTYwNTI3NTE4NX0.PubknmKAuR0WYqCPz9viz3bs-Afl0XlPXeCiJiB1DaI' 
+                                },
+                                data :giveMoney
+                              })
+                             .then((response) => {
+                                console.log(response);
+                             })
+                             .catch((error) => {
+                                console.log(error);
+                             });
                         }
                     }else{
                         alert("다시 선택하세요.");
@@ -159,70 +215,25 @@ function changeRoundButtonClick(){ // 새로운 배열 통에 4개씩 넣기, �
 let failModal = document.getElementById('gameover');
 let resetBtn = document.getElementById('resetBtn');
 
+const giveMoney = {"score":"score","id":"id"};
+
 resetBtn.addEventListener('click', function() {
     location.reload();
 })
 function Modal() {
     failModal.style.display="block";
+    axios({
+        method: 'post',
+        url: 'http://13.125.38.255:3000/game/rank/money',
+        headers: { 
+          'access-token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJ1c2VySWQiLCJpYXQiOjE2MDUxODg3ODUsImV4cCI6MTYwNTI3NTE4NX0.PubknmKAuR0WYqCPz9viz3bs-Afl0XlPXeCiJiB1DaI' 
+        },
+        data :giveMoney
+      })
+     .then((response) => {
+        console.log(response);
+     })
+     .catch((error) => {
+        console.log(error);
+     });
 }
-
-let time = 240 + '초';
-let sec= "";
-let j = 0;
-let x = setInterval(function() {
-   sec = 240 -j;
-   document.getElementById("time").innerHTML = "시간 : " + sec + "초";
-   j++; 
-   if(j == 241){
-   clearInterval(x);
-   Modal();
-   console.log('a');    
-}
-
-},1000);
-
-
-let lastScore;
-
-//잠수 돈 주기
-const giveMoney = JSON.stringify({"score":"score"});
-
-const config = {
-  method: 'post',
-  url: 'http://13.125.38.255:3000/game/rank/money',
-  headers: { 
-    'access-token': 'token', 
-    'Content-Type': 'application/json'
-  },
-  giveMoney : data
-};
-
-axios(config)
-.then(function (response) {
-  console.log(JSON.stringify(response.data));
-})
-.catch(function (error) {
-  console.log(error);
-});
-
-//랭킹 띄우기
-const data = '';
-
-var config = {
-  method: 'get',
-  url: 'http://13.125.38.255:3000/game/rank/',
-  headers: { 
-    'access-token': 'token1324'
-  },
-  data : data
-};
-
-axios(config)
-.then(function (response) {
-  console.log(JSON.stringify(response.data));
-})
-.catch(function (error) {
-  console.log(error);
-});
-
-let playTime = document.getElementById("playTime");

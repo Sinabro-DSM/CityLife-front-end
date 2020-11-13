@@ -11,32 +11,34 @@ let randomWord =  startWord[size];
 let randomSize = randomWord.length - 1;
 let start = document.getElementById('start-word');
 let score = document.getElementById('score');
-let rank = document.getElementById('rank');
+let rank = document.getElementsByClassName('rank');
 let ranking = [];
-let lastScore;
+window.onload=()=>{
+   axios({
+      method: 'get',
+      url: 'http://13.125.38.255:3000/game/rank/1',
+      headers: { 
+      'access-token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJ1c2VySWQiLCJpYXQiOjE2MDUxODg3ODUsImV4cCI6MTYwNTI3NTE4NX0.PubknmKAuR0WYqCPz9viz3bs-Afl0XlPXeCiJiB1DaI' 
+      }
+   })
+   .then((response) => {
+      console.log(response);
+      const rank = response.data;
+      rank.map((i,j)=>{
+         console.log(i);
+         let a = document.getElementsByClassName("rank-list")[j];
+         a.childNodes[3].innerText=i.userNickname;
+      });
+   })
+   .catch((error) => {
+      console.log(error);
+   })
+}
 
-//잠수 돈 주기
-const giveMoney = JSON.stringify({"score":"score"});
 
-axios({
-   method: 'get',
-   url: 'http://13.125.38.255:3000/game/rank:',
-   headers: { 
-     'access-token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJ1c2VySWQiLCJpYXQiOjE2MDUxODg3ODUsImV4cCI6MTYwNTI3NTE4NX0.PubknmKAuR0WYqCPz9viz3bs-Afl0XlPXeCiJiB1DaI' 
-   }
- })
-.then((response) => {
-   console.log(response);
-   // const rank = response.data.rank;
-//   console.log(JSON.stringify(response.data));
-})
-.catch((error) => {
-  console.log(error);
-});
+const giveMoney = {"score":"score", "id":"id"};
 
 
-//랭킹 띄우기
-const data = '';
 start.innerHTML = randomWord;
 btn.addEventListener('click', function(e) {
    e.preventDefault();
@@ -82,16 +84,13 @@ function Modal() {
       headers: { 
         'access-token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJ1c2VySWQiLCJpYXQiOjE2MDUxODg3ODUsImV4cCI6MTYwNTI3NTE4NX0.PubknmKAuR0WYqCPz9viz3bs-Afl0XlPXeCiJiB1DaI' 
       },
-      giveMoney :giveMoney
+      data :giveMoney
     })
    .then((response) => {
-      console.log('tlqkf')
       console.log(response);
-   //   console.log(JSON.stringify(response.data));
    })
    .catch((error) => {
-      console.log(';;')
-     console.log(error);
+      console.log(error);
    });
 
 }

@@ -1,0 +1,65 @@
+body{
+    margin: 0;
+    background-color: #C6F1F3;
+}
+.information{
+    display: flex;
+    justify-content: space-around;
+    padding-top: 100px;
+}
+.nickname{
+    width: 15%;
+    height: 90px;
+    background-color: #FFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.nickname span{
+    font-size: 2.5rem;
+}
+.cash{
+    display: flex;
+    align-items: center;
+}
+.cash img{
+    height: 77px;
+}
+.cash span{
+    padding-left: 10%;
+    font-size: 1.8rem;
+}
+section{
+    padding-top: 200px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: baseline;
+}
+.character img{
+    /* width: 20%; */
+    height: 171px;
+    
+}
+#ll{
+    position: absolute;
+    width: 100px;
+    font-size: 2rem;
+    color: #B9B9B9;
+    left: 58%;
+    bottom: 22%;
+}
+#bigCharacter{
+    height: 300px;
+    position: absolute;
+    left: 15%;
+    bottom: 10%;
+    opacity: 0;
+}
+#asd{
+    width: 100px;
+    position: absolute;
+    font-size: 2rem;
+    color: #B9B9B9;
+    left: 68%;
+    bottom: 22%;
+}
