@@ -7,27 +7,61 @@
     <title>myPage</title>
 </head>
 <body>
-    <div class="information">
-        <div class="nickname">
-            <span>닉네임</span>
+        <div class="information">
+            <div class="nickname">
+                    <span id="idBox"></span>
+            </div>
+            <div class="cash">
+                <img src="../IMG/character/myPageMoney.png" alt="">
+                <p id="restMoney"></p>
+            </div>
         </div>
-        <div class="cash">
-            <img src="../IMG/myPageMoney.png" alt="money">
-            <span>1000</span>
-        </div>
-    </div>
     <section>
         <div class="character">
-            <img src="../IMG/character.png" alt="character" id="charcater">
-            <img src="../IMG/character.png" alt="" id="bigCharacter" >
+            <img src="" alt="" id="currentCharacter" class="default">
         </div>
         <div class="food" id="food">
-            <img src="../IMG/ramen.png" alt="" id="ll">
-            <img src="../IMG/salad.png" alt="" id="asd">
-            <img src="../IMG/foodContainer.png" alt="">
+            <article class="firstContainer foodContainer">
+                <div class="foodBox">
+                    <div class="foodNumBox">0</div>
+                    <img src="../IMG/snack.png" alt="snack" onclick="changeCharacter(1)">
+                </div>
+                <div class="foodBox leftFoodBox">
+                    <div class="foodNumBox">0</div>
+                    <img src="../IMG/noodles.png" alt="ramen" onclick="changeCharacter(2)">
+                </div>
+            </article>
+            <article class="secondContainer foodContainer">
+                <div class="foodBox">
+                    <div class="foodNumBox">0</div>
+                    <img src="../IMG/kimbab.png" alt="kimbab" onclick="changeCharacter(3)">
+                </div>
+                <div class="foodBox leftFoodBox">
+                    <div class="foodNumBox ">0</div>
+                    <img src="../IMG/softdrink.png" alt="coke" onclick="changeCharacter(4)">
+                </div>
+            </article>
+            <article class="thirdContainer foodContainer">
+                <div class="foodBox">
+                    <div class="foodNumBox">0</div>
+                    <img src="../IMG/salad.png" alt="salad" onclick="changeCharacter(5)">
+                </div>
+                <div class="foodBox leftFoodBox">
+                    <div class="foodNumBox">0</div>
+                    <img src="../IMG/chickenbreast.png" alt="chickenbreast" onclick="changeCharacter(6)">
+                </div>
+            </article>
         </div>
+       
     </section>
-    
+
+    <a href="./cityLife.html" class="goMain">    
+        <button>
+            메인으로
+            <img src="../IMG/goMain.png" alt="">
+        </button>
+    </a>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js"></script>
     <script src="../JS/myPage.js"></script>
 </body>
 </html>
