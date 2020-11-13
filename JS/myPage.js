@@ -1,20 +1,3 @@
-// let food = document.getElementById('ll');
-// let character = document.getElementById('character');
-// let bigCharacter = document.getElementById('bigCharacter');
-// let asd = document.getElementById('asd');
-
-// food.addEventListener('click', function() {
-//     console.log('a');
-//     bigCharacter.style.opacity = 1;
-    
-// });
-
-// asd.addEventListener('click', function() {
-//     console.log('b');
-//     bigCharacter.style.opacity = 0;
-// });
-
-
 axios({
   method : 'get',
   url : 'http://13.125.38.255:3000/user',
@@ -25,10 +8,7 @@ axios({
 .then((response)=>{
   console.log(response);
   const foodIndex = response.data.foods;
-  // foodIndex.map((i,j) =>{
-  //   const foodCount = document.getElementsByClassName('foodNumBox')[j];
-  //   foodCount.innerHTML = i.count;
-  // })
+  
   for(let i = 0;i < foodIndex.length; i++){
     const foodCount = foodIndex[i].food;
     console.log(foodCount)
