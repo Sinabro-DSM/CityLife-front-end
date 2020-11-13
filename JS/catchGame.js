@@ -1,19 +1,19 @@
 let rank = document.getElementsByClassName('rank');
-
+let k = 0;
 window.onload=()=>{
   axios({
      method: 'get',
      url: 'http://13.125.38.255:3000/game/rank/3',
      headers: { 
-     'access-token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJ1c2VySWQiLCJpYXQiOjE2MDUxODg3ODUsImV4cCI6MTYwNTI3NTE4NX0.PubknmKAuR0WYqCPz9viz3bs-Afl0XlPXeCiJiB1DaI' 
+     'access-token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJ1c2VySWQiLCJpYXQiOjE2MDUyNzU2NjAsImV4cCI6MzYwMDE2MDUyNzU2NjB9.M4il0CtNPjghIydNyZy-ghN89G__8exyVSxQtjOIm6g' 
      }
   })
   .then((response) => {
     console.log(response);
-    const rank = response.data.rank;
+    const rank = response.data;
     rank.map((i,j)=>{
-      const a = document.getElementsByClassName('rank-list')[j];
-      a.childNodes[3].innerText = i.userNickname;
+      const rankList = document.getElementsByClassName('rank-list')[j];
+      rankList.childNodes[3].innerText = i.userId;
   })
   })
   .catch((error) => {
@@ -34,7 +34,8 @@ function pictureChange(){
         math = Math.floor(jbRandom*8)
         img[math].style.display = "block";
     },700);
-    const giveMoney = {"score":"score","id":"id"};
+    console.log(k)
+    
     let score = document.getElementById('score');
     let time = 30;
     let sec = "";
@@ -44,25 +45,28 @@ function pictureChange(){
         document.getElementById("time").innerHTML = "시간 : " + sec + "초";
         j++;
         if(j==31){
+            const giveMoney = {"score":k,"id":3};
             let gameover = document.getElementById('over');
             let restart = document.getElementById('re');
             clearInterval(repeat);
             clearInterval(x);
             gameover.style.display = "flex";
             restart.style.display = "block";
-            score.innerHTML = k - 1 + '점';
+            score.innerHTML = k  + '점';
             axios({
               method: 'post',
               url: 'http://13.125.38.255:3000/game/rank/money',
               headers: { 
-                'access-token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJ1c2VySWQiLCJpYXQiOjE2MDUxODg3ODUsImV4cCI6MTYwNTI3NTE4NX0.PubknmKAuR0WYqCPz9viz3bs-Afl0XlPXeCiJiB1DaI' 
+                'access-token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJ1c2VySWQiLCJpYXQiOjE2MDUyNzU2NjAsImV4cCI6MzYwMDE2MDUyNzU2NjB9.M4il0CtNPjghIydNyZy-ghN89G__8exyVSxQtjOIm6g' 
               },
               data: giveMoney
             })
            .then((response) => {
+               console.log(giveMoney.score)
               console.log(response);
            })
            .catch((error) => {
+              console.log(giveMoney);
               console.log(error);
            });
         }
@@ -76,11 +80,13 @@ function buttonChange1(){
     buttonChange.style.color = "white";
     buttonChange.innerHTML = "STOP";
 }
-let k = 0;
+
 function pointUp(){
     let point = document.getElementById('point');
-    point.innerHTML = "점수 : " + k;
     k+=1;
+    point.innerHTML = "점수 : " + k;
+    
+    console.log(k);
 /*     let idImg = document.getElementById('img');
     idImg.style.display = "none"; */
 }
