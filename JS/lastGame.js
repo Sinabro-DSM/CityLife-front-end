@@ -135,6 +135,7 @@ let x = setInterval(function() {
    if(j == 11){
    clearInterval(x);
    Modal();
+   input.setAttribute("disabled", "");
    }
 },1000);
 
