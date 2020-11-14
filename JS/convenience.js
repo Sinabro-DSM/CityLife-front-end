@@ -150,27 +150,27 @@ function menuclick (foodPrice, number){
 
     switch (number){
         case 0:{
-            foodId[0] = 1;
+            foodId.push(1);
             break; 
         }
         case 1:{
-            foodId[1] = 2;
+            foodId.push(2);
             break; 
         }
         case 2:{
-            foodId[2] = 3;
+            foodId.push(3);
             break; 
         }
         case 3:{
-            foodId[3] = 4;
+            foodId.push(4);
             break; 
         }
         case 4:{
-            foodId[4] = 5;
+            foodId.push(5);
             break; 
         }
         case 5:{
-            foodId[5] = 6;
+            foodId.push(6);
             break; 
         }
     }
