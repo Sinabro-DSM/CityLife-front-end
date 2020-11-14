@@ -15,8 +15,6 @@ const price = [
     document.getElementById('price6')
 ]
 
-let remainderMoney = document.getElementById('remainderMoney'); // 잔액 창
-let money = remainderMoney.innerText; // 잔액 받아오기
 let paymentResult = document.getElementById('paymentResult'); // 결제 결과 출력
 
 let foodCountNumber = [0,0,0,0,0,0]; // 음식마다 갯수 세기
@@ -36,48 +34,52 @@ let paymentList = document.getElementById('paymentList');
 
 let cartFoodList = [
     document.getElementById('cartsnackList'),
-    document.getElementById('cartsaladList'),
-    document.getElementById('cartchickenbreastList'),
     document.getElementById('cartnoodlesList'),
     document.getElementById('cartkimbabList'),
-    document.getElementById('cartcokeList')
+    document.getElementById('cartcokeList'),
+    document.getElementById('cartsaladList'),
+    document.getElementById('cartchickenbreastList')
 ]
 
 let cartFoodCount = [
     document.getElementById('cartsnackCount'),
-    document.getElementById('cartsaladCount'),
-    document.getElementById('cartchickenbreastCount'),
     document.getElementById('cartnoodlesCount'),
     document.getElementById('cartkimbabCount'),
-    document.getElementById('cartcokeCount')
+    document.getElementById('cartcokeCount'),
+    document.getElementById('cartsaladCount'),
+    document.getElementById('cartchickenbreastCount')
 ]
 
 let paymentFoodList = [
     document.getElementById('paymentsnackList'),
-    document.getElementById('paymentsaladList'),
-    document.getElementById('paymentchickenbreastList'),
     document.getElementById('paymentnoodlesList'),
     document.getElementById('paymentkimbabList'),
-    document.getElementById('paymentcokeList')
+    document.getElementById('paymentcokeList'),
+    document.getElementById('paymentsaladList'),
+    document.getElementById('paymentchickenbreastList')
 ] 
 
 let paymentFoodCount = [
     document.getElementById('paymentsnackCount'),
-    document.getElementById('paymentsaladCount'),
-    document.getElementById('paymentchickenbreastCount'),
     document.getElementById('paymentnoodlesCount'),
     document.getElementById('paymentkimbabCount'),
-    document.getElementById('paymentcokeCount')
+    document.getElementById('paymentcokeCount'),
+    document.getElementById('paymentsaladCount'),
+    document.getElementById('paymentchickenbreastCount')
 ]
 
 let foodSumPrice = [ // 음식 각각에 가격 넣어줄 곳
     document.getElementById('snackSumPrice'),
-    document.getElementById('saladSumPrice'),
-    document.getElementById('chickenbreastSumPrice'),
     document.getElementById('noodlesSumPrice'),
     document.getElementById('kimbabSumPrice'),
-    document.getElementById('cokeSumPrice')
+    document.getElementById('cokeSumPrice'),
+    document.getElementById('saladSumPrice'),
+    document.getElementById('chickenbreastSumPrice')
 ]
+
+let foodId = []
+
+const header = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJ1c2VySWQiLCJpYXQiOjE2MDUyNzU2NjAsImV4cCI6MzYwMDE2MDUyNzU2NjB9.M4il0CtNPjghIydNyZy-ghN89G__8exyVSxQtjOIm6g';
 
 function menumouseover (number){
     scanner[number].style.transform = "rotate(335deg)";
@@ -94,25 +96,38 @@ function cartClick(type){
 
 function paymentButtonClick(type){
     payment.style.display = type;
+
     if(type == 'block'){
-        if(money<priceAll){
+        axios({
+            url: 'http://13.125.38.255:3000' + '/food',
+            method: 'post',
+            data: {
+                "foodid": foodId,
+                "foodmoney": priceAll
+            },
+            headers:{
+                'access-token': header
+            }
+        }).then((res) => {
+            console.log(res);
+            switch (res.status){
+                case 200:{
+                    paymentResult.innerText = '결제 완료';
+                    break;
+                    
+                }
+            }
+        }).catch((error) => {
             paymentResult.innerText = '잔액이 부족합니다.';
-        }
-        else{
-            paymentResult.innerText = '결제 완료';
-            money=money-priceAll;
-            remainderMoney.innerText = money;
-        }
+        })
     }
-    if(type == 'none'){
+    else if(type == 'none'){
         cartEmptyClick();
+        window.location.reload();
     }
 }
 
-
-
 function menuclick (foodPrice, number){ // 메뉴 클릭시 실행
-    
     amountAll++;
     document.getElementById("basketAmount").innerText=amountAll; 
     basketAmountDisplay.style.display = "flex"; 
@@ -132,6 +147,34 @@ function menuclick (foodPrice, number){ // 메뉴 클릭시 실행
     priceAll = foodSumPriceNumber[0]+foodSumPriceNumber[1]+foodSumPriceNumber[2]+foodSumPriceNumber[3]+foodSumPriceNumber[4]+foodSumPriceNumber[5];
     console.log(priceAll)
     sumPrice.innerText = priceAll;
+
+    switch (number){
+        case 0:{
+            foodId[0] = 1;
+            break; 
+        }
+        case 1:{
+            foodId[1] = 2;
+            break; 
+        }
+        case 2:{
+            foodId[2] = 3;
+            break; 
+        }
+        case 3:{
+            foodId[3] = 4;
+            break; 
+        }
+        case 4:{
+            foodId[4] = 5;
+            break; 
+        }
+        case 5:{
+            foodId[5] = 6;
+            break; 
+        }
+    }
+    console.log(foodId)
     
 }
 
