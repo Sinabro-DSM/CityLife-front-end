@@ -8,7 +8,11 @@
 </head>
 <body>
     <header><section class="convenienceTitle">CITY 24</section></header>
-    <div class="money"><img class="won" src="./../IMG/won.png"><p>잔고 : </p><div id="remainderMoney">2500</div></div>
+    <div class="money">
+        <img class="won" src="./../IMG/won.png">
+        <p>잔고 : </p>
+        <p id="remainderMoney"></p>
+    </div>
     <section class="convenience">
         <section class="menu">
             <div class="menubar">
@@ -23,50 +27,50 @@
                 </div>
                 <div onmouseover="menumouseover(1)"
                      onmouseout="menumouseout(1)"
-                     onclick="menuclick('2500', 1)"
-                      class="foodBox" id="salad">
-                    <img class="foodImg" src="./../IMG/salad.png">
-                    <img class="barcode" src="./../IMG/barcode2.png">
+                     onclick="menuclick('800', 1)"
+                     class="foodBox" id="noodles">
+                    <img class="foodImg" src="./../IMG/noodles.png">
+                    <img class="barcode" src="./../IMG/barcode4.png">
                     <img id="scanner2"src="./../IMG/scanner.png">
-                    <div id="price2">2500원</div>
+                    <div id="price2">800원</div>
                 </div>
                 <div onmouseover="menumouseover(2)" 
-                     onmouseout="menumouseout(2)" 
-                     onclick="menuclick('2000', 2)" 
-                     class="foodBox" id="chickenbreast">
-                    <img class="foodImg" src="./../IMG/chickenbreast.png">
-                    <img class="barcode" src="./../IMG/barcode3.png">
+                     onmouseout="menumouseout(2)"
+                     onclick="menuclick('1000', 2)"
+                     class="foodBox" id="kimbab">
+                    <img class="foodImg" src="./../IMG/kimbab.png">
+                    <img class="barcode" src="./../IMG/barcode5.png">
                     <img id="scanner3"src="./../IMG/scanner.png">
-                    <div id="price3">2000원</div>
+                    <div id="price3">1000원</div>
                 </div>
             </div>
             <div class="menubar">
                 <div onmouseover="menumouseover(3)"
                      onmouseout="menumouseout(3)"
                      onclick="menuclick('800', 3)"
-                     class="foodBox" id="noodles">
-                    <img class="foodImg" src="./../IMG/noodles.png">
-                    <img class="barcode" src="./../IMG/barcode4.png">
-                    <img id="scanner4"src="./../IMG/scanner.png">
-                    <div id="price4">800원</div>
-                </div>
-                <div onmouseover="menumouseover(4)" 
-                     onmouseout="menumouseout(4)"
-                     onclick="menuclick('1000', 4)"
-                     class="foodBox" id="kimbab">
-                    <img class="foodImg" src="./../IMG/kimbab.png">
-                    <img class="barcode" src="./../IMG/barcode5.png">
-                    <img id="scanner5"src="./../IMG/scanner.png">
-                    <div id="price5">1000원</div>
-                </div>
-                <div onmouseover="menumouseover(5)"
-                     onmouseout="menumouseout(5)"
-                     onclick="menuclick('800', 5)"
                      class="foodBox" id="coke">
                     <img class="foodImg" src="./../IMG/softdrink.png">
                     <img class="barcode" src="./../IMG/barcode6.png">
+                    <img id="scanner4"src="./../IMG/scanner.png">
+                    <div id="price4">800원</div>
+                </div>
+                <div onmouseover="menumouseover(4)"
+                    onmouseout="menumouseout(4)"
+                    onclick="menuclick('2500', 4)"
+                    class="foodBox" id="salad">
+                    <img class="foodImg" src="./../IMG/salad.png">
+                    <img class="barcode" src="./../IMG/barcode2.png">
+                    <img id="scanner5"src="./../IMG/scanner.png">
+                    <div id="price5">2500원</div>
+                </div>
+                <div onmouseover="menumouseover(5)" 
+                     onmouseout="menumouseout(5)" 
+                     onclick="menuclick('2000', 5)" 
+                     class="foodBox" id="chickenbreast">
+                    <img class="foodImg" src="./../IMG/chickenbreast.png">
+                    <img class="barcode" src="./../IMG/barcode3.png">
                     <img id="scanner6"src="./../IMG/scanner.png">
-                    <div id="price6">800원</div>
+                    <div id="price6">2000원</div>
                 </div>
             </div>
         </section>
@@ -86,12 +90,12 @@
                     <tr class="cartListHeader"><td class="productTitle">상품명</td><td class="amountTitle">갯수</td></tr>
                 </thead>
                 <tbody id="cartList">
-                    <tr id="cartsnackList" class="paymentListDisplay"><td clasfirstCell">과자</td><td id="cartsnackCount"></td></tr>
-                    <tr id="cartsaladList" class="paymentListDisplay"><td clasfirstCell">샐러드</td><td id="cartsaladCount"></td></tr>
-                    <tr id="cartchickenbreastList" class="paymentListDisplay"><td clasfirstCell">닭가슴살</td><td id="cartchickenbreastCount"></td></tr>
-                    <tr id="cartnoodlesList" class="paymentListDisplay"><td clasfirstCell">라면</td><td id="cartnoodlesCount"></td></tr>
-                    <tr id="cartkimbabList" class="paymentListDisplay"><td clasfirstCell">삼각김밥</td><td id="cartkimbabCount"></td></tr>
-                    <tr id="cartcokeList" class="paymentListDisplay"><td clasfirstCell">콜라</td><td id="cartcokeCount"></td></tr>
+                    <tr id="cartsnackList" class="paymentListDisplay"><td class="firstCell">과자</td><td id="cartsnackCount"></td></tr>
+                    <tr id="cartnoodlesList" class="paymentListDisplay"><td class="firstCell">라면</td><td id="cartnoodlesCount"></td></tr>
+                    <tr id="cartkimbabList" class="paymentListDisplay"><td class="firstCell">삼각김밥</td><td id="cartkimbabCount"></td></tr>
+                    <tr id="cartcokeList" class="paymentListDisplay"><td class="firstCell">콜라</td><td id="cartcokeCount"></td></tr>
+                    <tr id="cartsaladList" class="paymentListDisplay"><td class="firstCell">샐러드</td><td id="cartsaladCount"></td></tr>
+                    <tr id="cartchickenbreastList" class="paymentListDisplay"><td class="firstCell">닭가슴살</td><td id="cartchickenbreastCount"></td></tr>
                 </tbody>
             </table>
             <div onclick="cartEmptyClick()" id="cartEmpty">장바구니 비우기</div>
@@ -112,16 +116,6 @@
                         <td id="paymentsnackCount" class="secondCell"></td>
                         <td id="snackSumPrice" class="thirdCell"></td>
                     </tr>
-                    <tr id="paymentsaladList" class="paymentListDisplay">
-                        <td class="firstCell">샐러드</td>
-                        <td id="paymentsaladCount" class="secondCell"></td>
-                        <td id="saladSumPrice" class="thirdCell"></td>
-                    </tr>
-                    <tr id="paymentchickenbreastList" class="paymentListDisplay">
-                        <td class="firstCell">닭가슴살</td>
-                        <td id="paymentchickenbreastCount" class="secondCell"></td>
-                        <td id="chickenbreastSumPrice" class="thirdCell"></td>
-                    </tr>
                     <tr id="paymentnoodlesList" class="paymentListDisplay">
                         <td class="firstCell">라면</td>
                         <td id="paymentnoodlesCount" class="secondCell"></td>
@@ -137,6 +131,16 @@
                         <td id="paymentcokeCount" class="secondCell"></td>
                         <td id="cokeSumPrice" class="thirdCell"></td>
                     </tr>
+                    <tr id="paymentsaladList" class="paymentListDisplay">
+                        <td class="firstCell">샐러드</td>
+                        <td id="paymentsaladCount" class="secondCell"></td>
+                        <td id="saladSumPrice" class="thirdCell"></td>
+                    </tr>
+                    <tr id="paymentchickenbreastList" class="paymentListDisplay">
+                        <td class="firstCell">닭가슴살</td>
+                        <td id="paymentchickenbreastCount" class="secondCell"></td>
+                        <td id="chickenbreastSumPrice" class="thirdCell"></td>
+                    </tr>
                     <tr id="sum">
                         <td class="firstCell">합계</td>
                         <td id="sumAmount" class="secondCell"></td>
@@ -149,5 +153,22 @@
     </section>
     <a class="main" href="./cityLife.html">메인으로<img src="./../IMG/mainButton.png"></a>
     <script src="./../JS/convenience.js"></script>
-</body>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script>
+        let remainderMoney = document.getElementById('remainderMoney'); 
+       
+        window.onload = function(){
+            axios({
+                url: 'http://13.125.38.255:3000' + '/food',
+                method: 'get',
+                headers:{
+                    'access-token': header
+                }
+            }).then((res)=>{
+                console.log(res);
+                remainderMoney.innerText = res.data.money;
+            })
+        }
+    </script>
+</body> 
 </html>
