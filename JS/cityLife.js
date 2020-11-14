@@ -60,16 +60,16 @@ $(document).keydown(function(event) {
         console.log(charVal.character)
         switch (charVal.character) {
             case 1:
-                char.src = "./../IMG/character/crow.png"
+                char.src = "./../IMG/character/hedgehog.png"
                 break;
             case 2:
-                char.src = "./../IMG/character/crow.png"
+                char.src = "./../IMG/character/raccoon.png"
                 break;
             case 3:
                 char.src = "./../IMG/character/crow.png"
                 break;
             case 4:
-                char.src = "./../IMG/character/crow.png"
+                char.src = "./../IMG/character/squirrel.png"
                 break;
         }
         if(charVal.weight <=30){
