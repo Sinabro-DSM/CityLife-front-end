@@ -25,8 +25,21 @@ body > img{
 }
 #char{
     bottom: 0px;
-    width: 150px;
+}
+.small{
+    height: 100px;
+}
+.default{
+    height: 150px;
+}
+.medium{
+    height: 200px;
+}
+.large{
     height: 250px;
+}
+.big{
+    height: 300px;
 }
 #alert{
     width: 140px;
