@@ -52,7 +52,7 @@ $(document).keydown(function(event) {
         url:'http://13.125.38.255:3000/user/character',
         method: 'get',
         headers:{
-          "access-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJ1c2VySWQiLCJpYXQiOjE2MDUyNzU2NjAsImV4cCI6MzYwMDE2MDUyNzU2NjB9.M4il0CtNPjghIydNyZy-ghN89G__8exyVSxQtjOIm6g"
+          "access-token": localStorage.getItem('accessToken')
         }
     }).then((res)=>{
         console.log(res);

@@ -36,7 +36,7 @@ for(let i=0; i<4; i++){
 
 let startButton = document.getElementsByClassName('startMent')[0];
 // const token = {headers:{'access-token': localStorage.getItem('accessToken')}}
-const header = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJ1c2VySWQiLCJpYXQiOjE2MDUyNzU2NjAsImV4cCI6MzYwMDE2MDUyNzU2NjB9.M4il0CtNPjghIydNyZy-ghN89G__8exyVSxQtjOIm6g';
+const header = localStorage.getItem('accessToken');
 
 startButton.addEventListener('click', () => {
     if(index==undefined){

@@ -2,7 +2,7 @@ axios({
   method : 'get',
   url : 'http://13.125.38.255:3000/user',
   headers:{
-    "access-token" : "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJ1c2VySWQiLCJpYXQiOjE2MDUyNzU2NjAsImV4cCI6MzYwMDE2MDUyNzU2NjB9.M4il0CtNPjghIydNyZy-ghN89G__8exyVSxQtjOIm6g"
+    "access-token" : localStorage.getItem('accessToken')
   }
 })
 .then((response)=>{

@@ -79,7 +79,7 @@ let foodSumPrice = [
 
 let foodId = []
 
-const header = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJ1c2VySWQiLCJpYXQiOjE2MDUyNzU2NjAsImV4cCI6MzYwMDE2MDUyNzU2NjB9.M4il0CtNPjghIydNyZy-ghN89G__8exyVSxQtjOIm6g';
+const header = localStorage.getItem('accessToken');
 
 function menumouseover (number){
     scanner[number].style.transform = "rotate(335deg)";
