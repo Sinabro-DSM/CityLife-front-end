@@ -4,32 +4,13 @@ body{
 }
 
 header > .light{
-    position: absolute;
+    margin-top: -250px;
     display: flex;
-    top: -35%;
     justify-content: space-around;  
     width: 100%;
 }
 header >.light img{
     width: 300px;
-}
-.shadowbox{
-    position: absolute;
-    background-color: #FFFF0E;
-    top: 14%;
-    width: 300px;
-    height: 200px;
-    opacity: 0.5;
-    box-shadow: 100px 100px 100px #FFFF0E;
-}
-.shadowbox:nth-of-type(2){
-    left: 33%;
-}
-.shadowbox:nth-of-type(1){
-    left: 0;
-}
-.shadowbox:nth-of-type(3){
-    right: 14%;
 }
 
 .masterpiece{
@@ -37,18 +18,15 @@ header >.light img{
     justify-content: space-evenly;
 }
 .masterpiece a img{
-    padding-top: 30%;
+    padding-top: 50px;
 }
 .monariza{
     width: 244px;
     height: 360px;
+    margin-left: -10%;
 }
 .monariza:hover{
     cursor: pointer;
-}
-.first-blockline{   
-    top: 50%;
-    left: 0;
 }
 
 .star {
@@ -58,26 +36,37 @@ header >.light img{
 .star:hover{
     cursor: pointer;
 }
-.second-blockline{
-    top: 50%;
-    left: 31%;
-}
-
 .sunflower {
     width: 244px;
     height: 358px;
+    margin-left: 10%;
 }
 .sunflower:hover{
     cursor: pointer;
 }
-.third-blockline{
-    top: 50%;
-    right: 0;
+.block{
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: -80px;
 }
-
-.blockline{
-    width: 530px;
-    height: 250px;
-    position: absolute;
-    z-index: 1;
+.out{
+    margin-top: 20px;
+}
+.out button{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    font-size: 1.5rem;
+    color: black;
+    background-color: #afbddf;
+    border-radius: 100px;
+    width: 13%;
+    cursor: pointer;
+    border: none;
+    padding: 10px 5px;
+    float: right;
+    margin:0px 10px 10px 0px ;
+}
+.out img{
+    height: 30px;
 }

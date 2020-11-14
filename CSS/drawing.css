@@ -54,3 +54,14 @@ body{
     opacity: 0.5;
     box-shadow: 300px 200px 300px #FFFF0E;
 }
+
+.goArt{
+    width: 10%;
+    padding: 10px 0px;
+    border-radius: 50px;
+    background-color: #afbddf;
+    border: none;
+    cursor: pointer;
+    float: right;
+    margin: 10px 10px;
+}
