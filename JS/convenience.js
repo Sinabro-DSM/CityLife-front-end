@@ -15,15 +15,15 @@ const price = [
     document.getElementById('price6')
 ]
 
-let paymentResult = document.getElementById('paymentResult'); // 결제 결과 출력
+let paymentResult = document.getElementById('paymentResult'); 
 
-let foodCountNumber = [0,0,0,0,0,0]; // 음식마다 갯수 세기
-let foodSumPriceNumber = [0,0,0,0,0,0] // 음식 각각의 가격
+let foodCountNumber = [0,0,0,0,0,0]; 
+let foodSumPriceNumber = [0,0,0,0,0,0] 
 
-let amountAll = 0, priceAll = 0; // 음식 총 갯수, 음식 총 가격
+let amountAll = 0, priceAll = 0; 
 
-let sumAmount = document.getElementById('sumAmount'); // 음식 총 갯수 넣을 곳
-let sumPrice = document.getElementById('sumPrice'); // 음식 총 가격 넣을 곳
+let sumAmount = document.getElementById('sumAmount'); 
+let sumPrice = document.getElementById('sumPrice'); 
 
 let basketAmountDisplay = document.getElementById('basketAmountDisplay');
 let cart = document.getElementById('cart');
@@ -68,7 +68,7 @@ let paymentFoodCount = [
     document.getElementById('paymentchickenbreastCount')
 ]
 
-let foodSumPrice = [ // 음식 각각에 가격 넣어줄 곳
+let foodSumPrice = [ 
     document.getElementById('snackSumPrice'),
     document.getElementById('noodlesSumPrice'),
     document.getElementById('kimbabSumPrice'),
@@ -127,7 +127,7 @@ function paymentButtonClick(type){
     }
 }
 
-function menuclick (foodPrice, number){ // 메뉴 클릭시 실행
+function menuclick (foodPrice, number){ 
     amountAll++;
     document.getElementById("basketAmount").innerText=amountAll; 
     basketAmountDisplay.style.display = "flex"; 
@@ -178,7 +178,7 @@ function menuclick (foodPrice, number){ // 메뉴 클릭시 실행
     
 }
 
-function cartEmptyClick(){ // 장바구니 비우기 선택
+function cartEmptyClick(){ 
     
     for(let i=0; i<6; i++){
         cartFoodList[i].style.display = "none"
