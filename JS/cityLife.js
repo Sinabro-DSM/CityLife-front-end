@@ -152,6 +152,7 @@ $(document).keydown(function(event) {
              $(document).keydown(function(event) {
                 if(event.keyCode == '38'){
                     location.href = "./../HTML/loginPage.html";
+                    localStorage.removeItem("accessToken");
                 }
               }); // 캐릭터 움직이는 거 구현 
         }        
