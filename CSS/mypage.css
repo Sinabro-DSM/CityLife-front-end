@@ -1,0 +1,105 @@
+body{
+    margin: 0;
+    background-color: #C6F1F3;
+}
+.information{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding-top: 100px;
+}
+section{
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.food img{
+    width: 80%;
+}
+.foodBox{
+    width: 150px;
+}
+.foodNumBox{
+    width: 30px;
+    height: 30px;
+    float: right;
+    border-radius: 50%;
+    background-color: #FB5757;
+    color: white;
+}
+.small{
+    height: 100px;
+}
+.default{
+    height: 150px;
+}
+.medium{
+    height: 200px;
+}
+.large{
+    height: 250px;
+}
+.big{
+    height: 300px;
+}
+.nickname{
+    width: 15%;
+    height: 60px;
+    font-size: 2rem;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    justify-content: space-around;
+    padding-top: 100px;
+}
+.cash{
+    display: flex;
+    align-items: center;
+    font-size: 2rem;
+    font-weight: lighter;
+}
+.cash img{
+    height: 70px;
+}
+.leftFoodBox{
+    margin-left: 25%;
+}
+.foodContainer{
+    margin-top: 20px;
+    border-bottom: 2px solid gray;
+}
+.firstContainer{
+    display: flex;
+}
+.secondContainer{
+    display: flex;
+}
+.thirdContainer{
+    display: flex;
+}
+.foodNumBox{
+    display: flex;
+    align-items: center;
+    justify-content:center;
+}
+.goMain button{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    font-size: 1.5rem;
+    color: white;
+    background-color: #495A80;
+    border-radius: 100px;
+    width: 13%;
+    border: none;
+    padding: 10px 5px;
+    float: right;
+    margin:0px 10px 10px 0px ;
+}
+.goMain img{
+    height: 30px;
+}
+

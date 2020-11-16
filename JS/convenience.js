@@ -1,11 +1,3 @@
-const foodList = [
-    document.getElementById('snack'),
-    document.getElementById('salad'),
-    document.getElementById('chickenbreast'),
-    document.getElementById('noodles'),
-    document.getElementById('kimbab'),
-    document.getElementById('softdrink')
-]
 const scanner = [
     document.getElementById('scanner1'),
     document.getElementById('scanner2'),
@@ -22,26 +14,186 @@ const price = [
     document.getElementById('price5'),
     document.getElementById('price6')
 ]
-let count= 0;
+
+let paymentResult = document.getElementById('paymentResult'); 
+
+let foodCountNumber = [0,0,0,0,0,0]; 
+let foodSumPriceNumber = [0,0,0,0,0,0] 
+
+let amountAll = 0, priceAll = 0; 
+
+let sumAmount = document.getElementById('sumAmount'); 
+let sumPrice = document.getElementById('sumPrice'); 
+
 let basketAmountDisplay = document.getElementById('basketAmountDisplay');
+let cart = document.getElementById('cart');
+let payment = document.getElementById('payment');
+
+let cartList = document.getElementById('cartList');
+let paymentList = document.getElementById('paymentList');
+
+let cartFoodList = [
+    document.getElementById('cartsnackList'),
+    document.getElementById('cartnoodlesList'),
+    document.getElementById('cartkimbabList'),
+    document.getElementById('cartcokeList'),
+    document.getElementById('cartsaladList'),
+    document.getElementById('cartchickenbreastList')
+]
+
+let cartFoodCount = [
+    document.getElementById('cartsnackCount'),
+    document.getElementById('cartnoodlesCount'),
+    document.getElementById('cartkimbabCount'),
+    document.getElementById('cartcokeCount'),
+    document.getElementById('cartsaladCount'),
+    document.getElementById('cartchickenbreastCount')
+]
+
+let paymentFoodList = [
+    document.getElementById('paymentsnackList'),
+    document.getElementById('paymentnoodlesList'),
+    document.getElementById('paymentkimbabList'),
+    document.getElementById('paymentcokeList'),
+    document.getElementById('paymentsaladList'),
+    document.getElementById('paymentchickenbreastList')
+] 
+
+let paymentFoodCount = [
+    document.getElementById('paymentsnackCount'),
+    document.getElementById('paymentnoodlesCount'),
+    document.getElementById('paymentkimbabCount'),
+    document.getElementById('paymentcokeCount'),
+    document.getElementById('paymentsaladCount'),
+    document.getElementById('paymentchickenbreastCount')
+]
+
+let foodSumPrice = [ 
+    document.getElementById('snackSumPrice'),
+    document.getElementById('noodlesSumPrice'),
+    document.getElementById('kimbabSumPrice'),
+    document.getElementById('cokeSumPrice'),
+    document.getElementById('saladSumPrice'),
+    document.getElementById('chickenbreastSumPrice')
+]
+
+let foodId = []
+
+const header = localStorage.getItem('accessToken');
 
 function menumouseover (number){
     scanner[number].style.transform = "rotate(335deg)";
     price[number].style.display = "flex"; 
 }
-
 function menumouseout (number){
     scanner[number].style.transform = "rotate(0deg)";
     price[number].style.display = "none"; 
 }
 
-function menuclick (foodname, foodprice){
-    console.log(foodname, foodprice);
-    count++;
-    if(count>0){
-    basketAmountDisplay.style.display = "flex"; 
-    }
-    else{basketAmountDisplay.style.display = "none"; }
-    console.log(count);
+function cartClick(type){
+   cart.style.display = type;
 }
 
+function paymentButtonClick(type){
+    payment.style.display = type;
+
+    if(type == 'block'){
+        axios({
+            url: 'http://13.125.38.255:3000' + '/food',
+            method: 'post',
+            data: {
+                "foodid": foodId,
+                "foodmoney": priceAll
+            },
+            headers:{
+                'access-token': header
+            }
+        }).then((res) => {
+            console.log(res);
+            switch (res.status){
+                case 200:{
+                    paymentResult.innerText = '결제 완료';
+                    break;
+                    
+                }
+            }
+        }).catch((error) => {
+            paymentResult.innerText = '잔액이 부족합니다.';
+        })
+    }
+    else if(type == 'none'){
+        cartEmptyClick();
+        window.location.reload();
+    }
+}
+
+function menuclick (foodPrice, number){ 
+    amountAll++;
+    document.getElementById("basketAmount").innerText=amountAll; 
+    basketAmountDisplay.style.display = "flex"; 
+
+    foodCountNumber[number]++;
+    if(foodCountNumber[number]==1){ 
+        cartFoodList[number].style.display = "flex";
+        paymentFoodList[number].style.display = "flex";
+    }
+    cartFoodCount[number].innerText = foodCountNumber[number];
+    paymentFoodCount[number].innerText = foodCountNumber[number];
+    foodSumPriceNumber[number] = foodPrice*foodCountNumber[number];
+    foodSumPrice[number].innerText = foodSumPriceNumber[number];
+    
+    sumAmount.innerText = amountAll;
+    
+    priceAll = foodSumPriceNumber[0]+foodSumPriceNumber[1]+foodSumPriceNumber[2]+foodSumPriceNumber[3]+foodSumPriceNumber[4]+foodSumPriceNumber[5];
+    console.log(priceAll)
+    sumPrice.innerText = priceAll;
+
+    switch (number){
+        case 0:{
+            foodId.push(1);
+            break; 
+        }
+        case 1:{
+            foodId.push(2);
+            break; 
+        }
+        case 2:{
+            foodId.push(3);
+            break; 
+        }
+        case 3:{
+            foodId.push(4);
+            break; 
+        }
+        case 4:{
+            foodId.push(5);
+            break; 
+        }
+        case 5:{
+            foodId.push(6);
+            break; 
+        }
+    }
+    console.log(foodId)
+    
+}
+
+function cartEmptyClick(){ 
+    
+    for(let i=0; i<6; i++){
+        cartFoodList[i].style.display = "none"
+        paymentFoodList[i].style.display = "none"
+        foodCountNumber[i] = 0;
+        foodSumPriceNumber[i] = 0;
+    }
+    
+    amountAll = 0, priceAll = 0;
+    
+    document.getElementById("basketAmount").innerText=amountAll;
+    basketAmountDisplay.style.display = "none";
+
+    sumAmount.innerText = amountAll;
+    sumPrice.innerText = priceAll;
+
+    console.log(priceAll);
+}

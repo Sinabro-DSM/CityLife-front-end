@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../CSS/loginPage.css">
-    <title>City Life</title>
+    <title>CityLife</title>
 </head>
 <body>
     <section>
@@ -14,19 +14,10 @@
             <p class="loginId">아이디 : <input type="text" id="loginIdInput" onkeyup="noSpaceForm(this);" onchange="noSpaceForm(this);"></p>
             <p class="loginPassword">비밀번호 : <input type="password" id="loginPasswordInput" onkeyup="noSpaceForm(this);" onchange="noSpaceForm(this);"></p>
             <a class="signupInformation" href="./signupPage.html">아직 계정이 없으신가요? 회원가입하기</a>
-            <a href="./characterChoose.html"><div class="loginAttempt">로그인하기</div></a>
+            <button class="loginAttempt" href="./characterChoose.html">로그인</button>
         </div>
     </section>
-    <script>
-        function noSpaceForm(obj) { // 공백사용못하게
-            let str_space = /\s/;  // 공백체크
-            if(str_space.exec(obj.value)) { //공백 체크
-                alert("공백을 사용할수 없습니다.\n\n공백은 자동적으로 제거 됩니다.");
-                obj.focus();
-                obj.value = obj.value.replace(' ',''); // 공백제거
-                return false;
-            }
-        }
-        </script>
+    <script src="./../JS/loginPage.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 </body>
 </html>

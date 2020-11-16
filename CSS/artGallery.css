@@ -1,0 +1,72 @@
+body{
+    margin: 0;
+    background-color: #495A80;
+}
+
+header > .light{
+    margin-top: -250px;
+    display: flex;
+    justify-content: space-around;  
+    width: 100%;
+}
+header >.light img{
+    width: 300px;
+}
+
+.masterpiece{
+    display: flex;
+    justify-content: space-evenly;
+}
+.masterpiece a img{
+    padding-top: 50px;
+}
+.monariza{
+    width: 244px;
+    height: 360px;
+    margin-left: -10%;
+}
+.monariza:hover{
+    cursor: pointer;
+}
+
+.star {
+    width: 380px;
+    height: 244px;
+}
+.star:hover{
+    cursor: pointer;
+}
+.sunflower {
+    width: 244px;
+    height: 358px;
+    margin-left: 10%;
+}
+.sunflower:hover{
+    cursor: pointer;
+}
+.block{
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: -80px;
+}
+.out{
+    margin-top: 20px;
+}
+.out button{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    font-size: 1.5rem;
+    color: black;
+    background-color: #afbddf;
+    border-radius: 100px;
+    width: 13%;
+    cursor: pointer;
+    border: none;
+    padding: 10px 5px;
+    float: right;
+    margin:0px 10px 10px 0px ;
+}
+.out img{
+    height: 30px;
+}

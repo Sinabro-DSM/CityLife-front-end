@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>두더지 잡기</title>
+    <title>CatchGame</title>
     <link rel="stylesheet" href="../CSS/catchGame.css">
     <link rel="stylesheet" href="../CSS/globalModal.css">
     <script src="http://code.jquery.com/jquery-latest.min.js"></script>
@@ -11,6 +11,7 @@
 <div class="gameover" id="over">
     <div class="gameover-wrapper">    
         <img src="../IMG/게임오버.png" alt="">
+        <div id="score"></div>
         <div class="reStart" id="re">
             <a href=""onClick='top.location!="javascript:location.reload();"'>초기화</a>
         </div>
@@ -18,7 +19,7 @@
     <div style="position: absolute;
     opacity: 0.7;
     width: 100%;
-    height: 100%;
+    height: 200%;
     background: black;"></div>
 </div>
 <body>
@@ -27,16 +28,16 @@
                 <div class="empty" id="empty">
                 </div>
                 <div class="nav-content">
-                        <a href="./mainMenu.html" class="game-list">
+                        <a href="mainMenu.html" class="game-list">
                             <span>Home</span>
                         </a>
-                        <a href="./ballPuzzle.html" class="game-list">
+                        <a href="ballPuzzle.html" class="game-list">
                             <span>ballpuzzle Game</span>
                         </a>
-                        <a href="./catchGame.html" class="game-list">
+                        <a href="catchGame.html" class="game-list">
                             <span>Catch Game</span>
                         </a>
-                        <a href="./lastGame.html" class="game-list">
+                        <a href="lastGame.html" class="game-list">
                             <span>lastletter</span>
                         </a>
                 </div>
@@ -95,9 +96,22 @@
                 <button onclick="pictureChange();buttonChange1();" id="button">START!</button>
             </div>
     </div> 
+    
     <div class="rank">
-        
+        <div class="highest rank-list">
+            <img src="../IMG/goldmedal.png" alt="">
+            <span></span>
+        </div>
+        <div class="second rank-list">
+            <img src="../IMG/silvermedal.png" alt="">
+            <span></span>
+        </div>
+        <div class="third rank-list">
+            <img src="../IMG/bronzemedal.png" alt="">
+            <span></span>
+        </div>
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js"></script>
     <script src="../JS/catchGame.js"></script>  
     <script src="http://code.jquery.com/jquery-latest.min.js"></script> 
     <script src="../JS/globalModal.js"></script>

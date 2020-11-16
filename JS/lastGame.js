@@ -10,6 +10,36 @@ let size = Math.floor(Math.random() * startSize);
 let randomWord =  startWord[size];
 let randomSize = randomWord.length - 1;
 let start = document.getElementById('start-word');
+let score = document.getElementById('score');
+let rank = document.getElementsByClassName('rank');
+let ranking = [];
+let lastScore = 0;
+window.onload=()=>{
+   axios({
+      method: 'get',
+      url: 'http://13.125.38.255:3000/game/rank/2',
+      headers: { 
+      'access-token': localStorage.getItem('accessToken')
+      }
+   })
+   .then((response) => {
+      console.log(response);
+      const rank = response.data;
+      console.log(rank);
+      rank.map((i, j)=>{
+         const rankList = document.getElementsByClassName("rank-list")[j];
+         rankList.childNodes[3].innerText=i.userId;
+         console.log(i.userId)
+      });
+   })
+   .catch((error) => {
+      console.log(error);
+   })
+}
+
+
+const giveMoney = {"score":lastScore, "id":2};
+
 
 start.innerHTML = randomWord;
 btn.addEventListener('click', function(e) {
@@ -17,11 +47,11 @@ btn.addEventListener('click', function(e) {
    // if (word.textContent[word.textContent.length - 1] == input.value[0]) {
       if (start.textContent[start.textContent.length - 1] == input.value[0]) {
          
-      for(i in array){
-         console.log(i);
+       for(i in array){
          if(array[i]==input.value)
          {
             // Modal();
+            
             alert('한번 사용한 단어는 사용하실 수 없습니다.');
             input.value = '';
             input.focus();
@@ -29,13 +59,19 @@ btn.addEventListener('click', function(e) {
          }
       }      
       alert('O');
-      // word.textContent = input.value;
       start.textContent = input.value;
       array.push(input.value);
       list.innerHTML+=input.value + " -> ";
-      console.log(array);
       input.value = '';
+      score.innerHTML = array.length;
+      lastScore++;
       input.focus();
+      console.log(array);  
+      if(score == 0){
+
+         return;
+      }
+      score.innerHTML = array.length + '점';
    } 
    else {
       alert('X');
@@ -45,9 +81,23 @@ btn.addEventListener('click', function(e) {
 });
 let modal = document.getElementById("gameover");
 
-
 function Modal() {
    modal.style.display="block";
+   axios({
+      method: 'post',
+      url: 'http://13.125.38.255:3000/game/rank/money',
+      headers: { 
+        'access-token': localStorage.getItem('accessToken') 
+      },
+      data :giveMoney
+    })
+   .then((response) => {
+      console.log(response);
+   })
+   .catch((error) => {
+      console.log(error);
+   });
+
 }
 function noSpace(obj){
    let str_space = /\s/;
@@ -75,18 +125,19 @@ navImg.addEventListener("click", toggleModal);
 //  closeButton.addEventListener("click", toggleModal);
 closeModal.addEventListener("click", toggleModal);
 
-// let time = 10;
-// let sec= "";
-// let j = 0;
-// let x = setInterval(function() {
-//    sec = 10-j;
-//    document.getElementById("time").innerHTML = "시간 : " + sec + "초";
-//    j++; 
-//    if(j == 11){
-//    clearInterval(x);
-//    Modal();
-// }
+let time = 10;
+let sec= "";
+let j = 0;
+let x = setInterval(function() {
+   sec = 10-j;
+   document.getElementById("time").innerHTML = "시간 : " + sec + "초";
+   j++; 
+   if(j == 11){
+   clearInterval(x);
+   Modal();
+   }
+},1000);
 
-// },1000);
+
 
 

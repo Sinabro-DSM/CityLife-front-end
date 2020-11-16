@@ -10,7 +10,7 @@ const character = [
     document.querySelector('.crow'),
     document.querySelector('.squirrel')
 ]
-let count=0, beforeCilckPointer, beforeCilckCharacter;
+let count=0, beforeCilckPointer, beforeCilckCharacter, index;
 
 for(let i=0; i<4; i++){
     character[i].addEventListener('click', function() {
@@ -20,6 +20,7 @@ for(let i=0; i<4; i++){
             pointer[i].classList.add('pointerClick');
             character[i].classList.add('characterClick');
             count=1;
+            index = i+1;
         }
         else{
             beforeCilckPointer.classList.remove('pointerClick');
@@ -28,6 +29,33 @@ for(let i=0; i<4; i++){
             beforeCilckCharacter = character[i];
             pointer[i].classList.add('pointerClick');
             character[i].classList.add('characterClick');
+            index = i+1;
         }
     })
 }
+
+let startButton = document.getElementsByClassName('startMent')[0];
+// const token = {headers:{'access-token': localStorage.getItem('accessToken')}}
+const header = localStorage.getItem('accessToken');
+
+startButton.addEventListener('click', () => {
+    if(index==undefined){
+        alert('캐릭터를 선택해주세요!');
+    }
+    else{
+    console.log(index);
+    axios({
+        url: 'http://13.125.38.255:3000' + '/user/info',
+        method: 'post',
+        data : {
+            "character": index
+        },
+        headers:{
+            'access-token': header
+        }
+    }).then((res)=>{
+        console.log(res);
+        window.location.href = './../HTML/cityLife.html'
+    })
+}
+})

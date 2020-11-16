@@ -5,9 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../CSS/ballPuzzle.css">
     <link rel="stylesheet" href="../CSS/globalModal.css">
-    <title>공 옮기기 게임</title>
+    <title>BallPuzzleGame</title>
 </head>
 <body>
+    
+
+    <div class="time" id="time"> <span>시간 : 4분0초</span></div>
     <img src="../IMG/nav.png" alt="nav" class="nav-img">
     <div class="nav-modal" id="nav-modal">
         <div class="empty" id="empty">
@@ -28,18 +31,30 @@
         </div>
     </div>
     <header>
-        
         <div>
             <h1 class="gameTitle">Ball Puzzle</h1>
             <p class="titleAssistant">Moving the ball!!</p>
         </div>
     </header>
+    <div id="modalBackground"></div>
     <div id="completeModal">
-        <div id="modalOverlay"></div>
-        <div class="completeChange">
-            <button class="exitButton" onclick="exitModal();" type="button"><img src="./../IMG/exit.png" alt="exit"></button>
-            ~성공~
-        </div>
+        <button class="exitButton" onclick="exitModal();" type="button">초기화</button>                
+        <span>축하합니다. 공을 다 맞추셨습니다!</span><br>
+        <span id="playTime"></span>
+    </div>
+    <div class="gameover-modal" id="gameover">
+        <div class="modal-content">
+            <div class="content">
+                <div class="head">
+                    <h1>Game Over</h1>
+                </div>
+                    <div id="score" ></div>
+                    <div class="under">
+                        <button id="resetBtn">다시하기</button>
+                    </div>
+            </div>
+             
+        </div> 
     </div>
     <section class="allButton">
         <button class="resetButton" onclick="resetButtonClick();" type="button"> Reset </button>
@@ -127,6 +142,21 @@
                 </div>
             </div>
     </section>
+    <div class="rank">
+        <div class="highest rank-list">
+            <img src="../IMG/goldmedal.png" alt="">
+            <span></span>
+        </div>
+        <div class="second rank-list">
+            <img src="../IMG/silvermedal.png" alt="">
+            <span></span>
+        </div>
+        <div class="third rank-list">
+            <img src="../IMG/bronzemedal.png" alt="">
+            <span></span>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js"></script>
     <script src="../JS/ballPuzzle.js"></script>
     <script src="../JS/globalModal.js"></script>
 </body>
