@@ -4,7 +4,7 @@
 
 - HTML5
 - CSS3
-- Vanilla Javascript
+- Javascript
 
 # 기능 분담
 - 윤석훈 
