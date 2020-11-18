@@ -88,7 +88,7 @@ function complete(){ // 완성된 경우
         }
         ballcount=0;
     }
-    if(bottlecount==1){
+    if(bottlecount==4){
         clearInterval(x);
         return 1;
     }
@@ -135,7 +135,7 @@ function set(){
                             document.getElementById("completeModal").style.display="flex";
                             document.getElementById("modalBackground").style.visibility = "visible";
                             document.getElementById("modalBackground").style.zIndex="3";
-                            playTime.innerHTML = Math.floor(j/60) + "분" + j%60 + "초";
+                            playTime.innerHTML =  + Math.floor(j/60) + "분" + j%60 + "초";
 
                             axios({
                                 method: 'post',

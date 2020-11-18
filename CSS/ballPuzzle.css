@@ -129,8 +129,10 @@ header{
     align-items: center;
     justify-content: center;
     z-index: 3;
-    background-color: white;
+    background-color:#c9d4ec;
     top: 40%;
+    flex-direction: column;
+    border-radius: 10px;
 }
 
 
@@ -160,6 +162,7 @@ header{
     right: 15px;
     outline: none;
     padding: 0px;
+    cursor: pointer;
 }
 
 .exitButton img{
@@ -215,8 +218,8 @@ header{
     transform: translate(-50%, -50%);
     background-color: white;
     padding:  1rem 1.15rem;
-    width: 500px;
-    height: 300px;
+    width: 300px;
+    height: 150px;
     border-radius: 0.5rem;
 }
 .show-modal{
@@ -225,4 +228,15 @@ header{
     visibility: visible;
     transform: scale(1.0);
     transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
+}
+#resetBtn{
+    width: 80%;
+    height: 40px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+#resetBtn:hover{
+    background: gray;
+    color: white;
 }
