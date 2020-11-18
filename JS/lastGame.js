@@ -125,14 +125,14 @@ navImg.addEventListener("click", toggleModal);
 //  closeButton.addEventListener("click", toggleModal);
 closeModal.addEventListener("click", toggleModal);
 
-let time = 10;
+let time = 30;
 let sec= "";
 let j = 0;
 let x = setInterval(function() {
-   sec = 10-j;
+   sec = 30-j;
    document.getElementById("time").innerHTML = "시간 : " + sec + "초";
    j++; 
-   if(j == 11){
+   if(j == 31){
    clearInterval(x);
    Modal();
    }
