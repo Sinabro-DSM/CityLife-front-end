@@ -3,22 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>LottoShop</title>
     <link rel="stylesheet" href="../CSS/lottoShop.css">
 </head>
 <body>
     <div class="page" id="page">
-        <button>
+        <button onClick="location.href='cityLife.html'">
             메인으로
         </button>
         <a>LOTTO SHOP</a>
         <button onclick="entrance()">
-            로또긁기 : 500원
+            로또긁기 : 300원
         </button>
     </div>
     <div class="page2" id="page2">
         <img src="./../IMG/erase.png" alt="">
-        <a href="cityLife.html"><button id="main">메인으로</button></a>
+        <a href="./cityLife.html"><button id="main">메인으로</button></a>
         <a class="lottoTitle">LOTTO SHOP</a>
         <div class="randomBox">
              <div class="boxCover" id="boxCover"></div> 
@@ -26,6 +26,7 @@
         </div>
     </div>
 <!--      <div class="bodyCover"></div> -->
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="./../JS/lottoShop.js"></script>    
 </body>
 </html>

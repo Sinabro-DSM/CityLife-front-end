@@ -26,7 +26,7 @@ header{padding-top: 40px;}
 
 .money{
     background-color: #F4FF57;
-    width: 188px;
+    width: 216px;
     height: 64px;
     font-size: 24px;
     display: flex;
@@ -36,9 +36,9 @@ header{padding-top: 40px;}
     cursor: pointer;
 }
 
-#remainderMoney{
-    width: 60px;
-}
+/* #remainderMoney{
+    width: 80px;
+} */
 
 .won{
     width: 44px;

@@ -4,11 +4,11 @@ let j = 0;
 char.style.transition = "0s";
 let charVal = 1;
 
+
+
 $(document).keydown(function(event) {
-    char.src = "./../IMG/캐릭터" + charVal + ".png";
     if (event.keyCode == '37') {
-        charVal = 2;
-        char.src = "./../IMG/캐릭터2.png"
+/*         charVal = 2; */
         if(char.style.marginLeft.split("px")[0]==0){
             return;
         }else{ // 끝에서 멈추게
@@ -17,8 +17,7 @@ $(document).keydown(function(event) {
         i--;
     } // 왼쪽으로 움직이기
     else if (event.keyCode == '39') {
-        charVal = 1; 
-        char.src = "./../IMG/캐릭터1.png";
+
         if(char.style.marginLeft.split("px")[0]>=3290){
             return;
         }else{
@@ -49,6 +48,49 @@ $(document).keydown(function(event) {
   let alertVal5 = document.getElementById('alert5'); 
   let arrow5 = document.getElementById('arrow5');
   window.onload = function(){
+    axios({
+        url:'http://13.125.38.255:3000/user/character',
+        method: 'get',
+        headers:{
+          "access-token": localStorage.getItem('accessToken')
+        }
+    }).then((res)=>{
+        console.log(res);
+        let charVal = res.data;
+        console.log(charVal.character)
+        switch (charVal.character) {
+            case 1:
+                char.src = "./../IMG/character/hedgehog.png"
+                break;
+            case 2:
+                char.src = "./../IMG/character/raccoon.png"
+                break;
+            case 3:
+                char.src = "./../IMG/character/crow.png"
+                break;
+            case 4:
+                char.src = "./../IMG/character/squirrel.png"
+                break;
+        }
+        if(charVal.weight <=30){
+            char.className="small"
+          }
+          else if(charVal.weight <=60){
+            char.className="default"
+          }
+          else if(charVal.weight <=80){
+            char.className="medium"
+          }
+          else if(charVal.weight <=90){
+            char.className="large"
+          }
+          else{
+            char.className="big"
+          }
+        
+    }).catch((res)=>{
+        console.log(res)
+    })
       setInterval(() => {
         console.log(char.style.marginLeft)
         if(char.style.marginLeft == '700px'){
@@ -110,6 +152,7 @@ $(document).keydown(function(event) {
              $(document).keydown(function(event) {
                 if(event.keyCode == '38'){
                     location.href = "./../HTML/loginPage.html";
+                    localStorage.removeItem("accessToken");
                 }
               }); // 캐릭터 움직이는 거 구현 
         }        
