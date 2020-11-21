@@ -4,6 +4,9 @@ let talkPhoto = document.getElementById('talk');
 let firstBtn = document.getElementById('firstBtn');
 let secondBtn = document.getElementById('secondBtn');
 let thirdBtn = document.getElementById('thirdBtn');
+let starBtn = document.getElementById('startBtn');
+let start = document.getElementById('start');
+let startContent = document.getElementById('startContent');
 
 firstBtn.addEventListener('click', ()=>{
     if(yallyPhoto.style.transform == "translateX(-102.7%)"){
@@ -63,4 +66,10 @@ thirdBtn.addEventListener('click', ()=>{
         yallyPhoto.style.transform = 'translateX(102.7%)';
         talkPhoto.style.transform = 'translateX(-205.14%)';
     }
+});
+
+starBtn.addEventListener('click', () => {
+    start.style.opacity = '0';
+    startContent.style.opacity = '0';
+    startContent.style.zIndex = '-10';
 });
