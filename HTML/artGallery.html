@@ -2,47 +2,41 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-swcale=1.0">
-    <link rel="stylesheet" type="text/css" href="../CSS/artGallery.css">
-    <title>ArtGallery</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/artGallery.css" type="text/css">
+    <title>artGallery</title>
 </head>
 <body>
-    <header>
-        <div class="light">
-            <img src="../IMG/light.png" alt="light">
-            <img src="../IMG/light.png" alt="light">
-            <img src="../IMG/light.png" alt="light">
+        <div class="logo">
+            <span>ART GALLERY</span>
         </div>
-    </header>
-    <article> 
-        <div class="masterpiece">
-            <div class="first-drawing">
-                <a href="./drawing.html"><img src="../IMG/monariza.jpg" alt="monariza" class="monariza" onmouseover="this.src='../IMG/monariza-hover.png'" onmouseout="this.src='../IMG/monariza.jpg'"></a>
+        <nav>
+            <button id="firstBtn">1</button>
+            <button id="secondBtn">2</button>
+            <button id="thirdBtn">3</button>
+        </nav>
+        <section>
+            <div class="explanation">
+                <span>시나브로</span> <br>
+                <span>
+                    시나브로는 대덕소프트웨어마이스터고등학교의 <br>
+                    웹 전공 동아리입니다. 선후배간 멘토링을 <br>
+                    통해 시나브로 성장하는 것을 목표로 합니다. <br>
+                    동아리 프로세스는 라이트닝 토크, 일주일 <br>
+                    목표와 회고, 분야별 멘토링, 학년별 프로젝트가 <br>
+                    있습니다. 학년별 프로젝트 결과물로는 2학년이 <br>
+                    제작한 음성 SNS인 Yally, 1학년이 제작한 <br>
+                    City Life가 있습니다. City Life는 시나브로의 <br> 
+                    1학년 학생들이 제작한 2D 도시 시뮬레이션 <br>
+                    미니게임 웹입니다.
+                </span>
             </div>
-            <div class="second-drawing">
-                <a href="./drawing.html"><img src="../IMG/star.jpeg" alt="star" class="star" onmouseover="this.src='../IMG/star-hover.png'" onmouseout="this.src='../IMG/star.jpeg'"></a>
-                <!-- <img src="../IMG/blockline.png" alt="blockline" class="second-blockline blockline"> -->
+            <div class="carouselSlide">
+                <img src="../IMG/sinabro.png" alt="" id="group">
+                <img src="../IMG/yally.png" alt="" id="yally">
+                <img src="../IMG/lighteningTalk.png" alt="" id="talk">
             </div>
-            <div class="third-drawing">
-                <a href="./drawing.html"><img src="../IMG/sunflower.jpg" alt="sunflower" class="sunflower" onmouseover="this.src='../IMG/sunflower-hover.png'" onmouseout="this.src='../IMG/sunflower.jpg'"></a>
-                <!-- <img src="../IMG/blockline.png" alt="blockline" class="third-blockline blockline"> -->
-            </div>
-        </div>
-        <div class="block">
-            <img src="../IMG/blockline.png" alt="blockline" class="blockline firstBlockline">
-            <img src="../IMG/blockline.png" alt="blockline" class="blockline secondBlockline">
-            <img src="../IMG/blockline.png" alt="blockline" class="blockline thirdBlockline">
-        </div>
-    </article>
-    <div class="out">
-        <a href="./cityLife.html">
-            <button>
-                <span>메인으로</span>
-                <img src="../IMG/mainButton.png " alt="">
-            </button>
-        </a>
-    </div>
-    
-    <script src="../JS/artGallery.js"></script>
+        </section>
+        <script src="../JS/artGallery.js"></script>
 </body>
 </html>
