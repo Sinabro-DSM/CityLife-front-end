@@ -72,4 +72,5 @@ starBtn.addEventListener('click', () => {
     start.style.opacity = '0';
     startContent.style.opacity = '0';
     startContent.style.zIndex = '-10';
+    start.style.zIndex = '-10';
 });
