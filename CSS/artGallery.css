@@ -1,72 +1,72 @@
 body{
     margin: 0;
-    background-color: #495A80;
+    background-image: url('../IMG/artBackground.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
 }
-
-header > .light{
-    margin-top: -250px;
+.logo{
+    font-size: 2.2rem;
+    color: #0F4C81;
+    font-weight: bold;
+    margin: 30px 0px 0px 4%;
+}
+.explanation{
+    width: 50%;
+}
+.explanation span:nth-of-type(1){
+    font-size: 4rem;
+    color: #0F4C81;
+    font-weight: bold;
+    width: 40%;
+}
+.explanation span:nth-of-type(2){
+    color: #292929;
+}
+section{
     display: flex;
-    justify-content: space-around;  
-    width: 100%;
+    align-items: flex-end;
+    margin-top: 120px;
+    transform: translateX(17%);
 }
-header >.light img{
-    width: 300px;
-}
-
-.masterpiece{
+.carouselSlide {
     display: flex;
-    justify-content: space-evenly;
 }
-.masterpiece a img{
-    padding-top: 50px;
+.carouselSlide img{
+    width: 65%;
+    height: 370px;
+    margin-left: 20px;
 }
-.monariza{
-    width: 244px;
-    height: 360px;
-    margin-left: -10%;
-}
-.monariza:hover{
-    cursor: pointer;
-}
-
-.star {
-    width: 380px;
-    height: 244px;
-}
-.star:hover{
-    cursor: pointer;
-}
-.sunflower {
-    width: 244px;
-    height: 358px;
-    margin-left: 10%;
-}
-.sunflower:hover{
-    cursor: pointer;
-}
-.block{
-    display: flex;
-    justify-content: space-evenly;
-    margin-top: -80px;
-}
-.out{
-    margin-top: 20px;
-}
-.out button{
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    font-size: 1.5rem;
-    color: black;
-    background-color: #afbddf;
-    border-radius: 100px;
-    width: 13%;
-    cursor: pointer;
-    border: none;
-    padding: 10px 5px;
+nav{
     float: right;
-    margin:0px 10px 10px 0px ;
+    display: flex;
+    align-items:center;
+    width: 180px;
+    justify-content: space-around;
+    margin-top: 70px;
+    transform: translateX(-320%);
 }
-.out img{
-    height: 30px;
+nav button{
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    width: 30px;
+    height: 27px;
+    background: none;
+}
+nav button:hover{
+    background: #d8d8d8;
+    cursor: pointer;
+}
+nav img{
+    cursor: pointer;
+}
+.leftArrow{
+    width: 20px;
+    height: 15px;
+}
+.rightArrow{
+    width: 20px;
+    height: 15px;
+    transform: rotate(180deg);
 }
